@@ -1,20 +1,14 @@
 {
   "requests": [
     {
-      "name": "java-casual/issues/1",
-      "parent": [
-        "intersection/issues/55",
-        "intersection/issues/56"
-      ],
+      "name": "intersection/issues/42",
+      "parent": [],
       "related": [],
       "children": []
     },
     {
-      "name": "java-casual/issues/2",
-      "parent": [
-        "intersection/issues/55",
-        "intersection/issues/56"
-      ],
+      "name": "intersection/issues/43",
+      "parent": [],
       "related": [],
       "children": []
     }
