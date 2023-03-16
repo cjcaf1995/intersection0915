@@ -2,7 +2,7 @@
 <html>
 <body style="background-color:#1A2735">
 <head>
-    <h3>Build Version: 20230316-1430</h3>
+    <h3>Build Version: 20230316-1455</h3>
 </head>
 <script>
 
@@ -140,6 +140,19 @@ openStuff = function () {
                 requestObj["children"] = [];
                 ALL_REQUEST_OBJECTS.push(requestObj);
             }
+            if (objCommand["commandType"] === "ROLL") {
+                let thisObject = getRecord(originThis);
+                let tmpArr = [];
+                let tmpArr2 = [];
+                tmpArr2 = mergeArrays(tmpArr2, thisObject["parent"]);
+                tmpArr = mergeArrays(tmpArr, tmpArr2);
+                tmpArr2 = mergeArrays(tmpArr2, thisObject["related"]);
+                tmpArr = mergeArrays(tmpArr, tmpArr2);
+                tmpArr2 = mergeArrays(tmpArr2, thisObject["children"]);
+                tmpArr = mergeArrays(tmpArr, tmpArr2);
+                shuffleArray(tmpArr);
+                window.open("https://github.com/cjcaf1995/" + tmpArr[0]);
+            }
     });
     console.log("ALL (After Operation): " + JSON.stringify(RELATIONSHIPS));
     
@@ -209,7 +222,9 @@ function addRelationship(requestObj) {
 
 finalAddRelationship = function(REQUEST_OBJECT) {
     
+    alert("CURR REQUEST OBJ: " + JSON.stringify(REQUEST_OBJECT));
     addRelationship(REQUEST_OBJECT);
+    alert("RELATIONSHIPS (after addRelationship): " + JSON.stringify(RELATIONSHIPS));
     
     // Identify non-existent relationships (to be added later)
     let arrNewElements = [];
