@@ -2,19 +2,21 @@
 <html>
 <body style="background-color:#1A2735">
 <head>
-    <h3>Build Version: 20230316-14:07</h3>
+    <h3>Build Version: 20230316-1426</h3>
 </head>
 <script>
 
+const REQUESTS_JSON = [];
 const MASTER_SCHEMA = [];
 const RELATIONSHIPS = [];
 const GITHUB_ACCOUNT_PREFIX = "https://github.com/cjcaf1995/";
 
 window.onload = function() {
     const GITHUB_ACCOUNT = "cjcaf1995";
-    const ENV = "prod";
+    const ENV = "tumblr";
     const schemaUrl = ENV === "prod" ? "schema.json" : "https://raw.githubusercontent.com/" + GITHUB_ACCOUNT + "/intersection0915/main/schema.json";
     const relationshipUrl = ENV === "prod" ? "relationships.json" : "https://raw.githubusercontent.com/" + GITHUB_ACCOUNT + "/intersection0915/main/relationships.json";
+    const requestsUrl = ENV === "prod" ? "data.json" : "https://raw.githubusercontent.com/" + GITHUB_ACCOUNT + "/intersection0915/main/data.json";
     fetch(schemaUrl)
         .then(response => response.json())
         .then(data => {
@@ -30,12 +32,37 @@ window.onload = function() {
                 let currEntry = data.all[i];
                 RELATIONSHIPS.push(currEntry);
             }
-            console.log("INITIAL DATA: " + JSON.stringify(RELATIONSHIPS));
+            alert("INITIAL DATA: " + JSON.stringify(RELATIONSHIPS));
+        });
+    fetch(requestsUrl)
+        .then(response => response.json())
+        .then(data => {
+            for (var i = 0; i < data.requests.length; i++){
+                let currEntry = data.requests[i];
+                RELATIONSHIPS.push(currEntry);
+            }
+            alert("REQUESTS: " + JSON.stringify(RELATIONSHIPS));
         });
 }
 
 function shortenUrl(githubUrl) {
     return githubUrl.replaceAll(GITHUB_ACCOUNT_PREFIX, "");
+}
+
+processDataJson = function () {
+    // 1 Request <--> 1 JSON file
+    REQUESTS_JSON.forEach(function(requestObj){
+        finalAddRelationship(requestObj); // ------------------ MAIN COMMAND THAT PERFORMS ------------------
+    });
+    let jsonContent = "data:text/json;charset=utf-8," + JSON.stringify(RELATIONSHIPS);
+    var encodedUri = encodeURI(jsonContent);
+    // window.open(encodedUri);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    const currDate = new Date().toISOString().split('T')[0];
+    link.setAttribute("download", new Date() + "_RELATIONSHIPS.json");
+    document.body.appendChild(link); // Required for FF
+    link.click(); // This will download the JSON
 }
 
 openStuff = function () {
@@ -62,9 +89,11 @@ openStuff = function () {
     const originThis = urlParams.get('this');
     const command = urlParams.get('command');
     const commandTokenArr = command.split("_");
-    // alert("THIS: " + originThis);
-    alert("commandTokenArr: " + commandTokenArr);
-
+    alert("THIS: " + originThis);
+    if (commandTokenArr.length > 0) {
+        alert("commandTokenArr: " + commandTokenArr);
+    }
+    
     let objCommand = {};
     for (var i = 0; i < commandTokenArr.length; i++){
         let currToken = commandTokenArr[i];
@@ -83,6 +112,7 @@ openStuff = function () {
     }
     console.log("command object: " + JSON.stringify(objCommand));
     
+    let ALL_REQUEST_OBJECTS = [];
     let objCommandArr = [objCommand];
     objCommandArr.forEach(function(objCommand){
             let requestObj = {
@@ -101,11 +131,31 @@ openStuff = function () {
                 if (objCommand["relationship"] === "C") {
                     requestObj["children"] = objCommand["targetIssueIds"];
                 }
-                finalAddRelationship(requestObj);
+                // finalAddRelationship(requestObj); // ------------------ MAIN COMMAND THAT PERFORMS ------------------
+                ALL_REQUEST_OBJECTS.push(requestObj);
+            }
+            if (objCommand["commandType"] === "NEW") {
+                requestObj["parent"] = [];
+                requestObj["related"] = [];
+                requestObj["children"] = [];
+                ALL_REQUEST_OBJECTS.push(requestObj);
             }
     });
+    console.log("ALL (After Operation): " + JSON.stringify(RELATIONSHIPS));
     
-    alert("ALL (After Operation): " + JSON.stringify(RELATIONSHIPS));
+    // 1 Request <--> 1 JSON file
+    ALL_REQUEST_OBJECTS.forEach(function(requestObj){
+        let jsonContent = "data:text/json;charset=utf-8," + JSON.stringify(requestObj);
+        var encodedUri = encodeURI(jsonContent);
+        // window.open(encodedUri);
+        var link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        const currDate = new Date().toISOString().split('T')[0];
+        link.setAttribute("download", "request_" + requestObj["name"] + currDate + "_" + (Math.random() * 100) +  ".json");
+        document.body.appendChild(link); // Required for FF
+        link.click(); // This will download the JSON
+    });
+    
 };
 
 function randomIntFromInterval(min, max) {
@@ -289,7 +339,8 @@ finalAddRelationship = function(REQUEST_OBJECT) {
 <br>
 <br>
 <div style="text-align:center">
-   <button id="randomButton" onclick="openStuff();">実行</button>
+   <button id="randomButton" onclick="openStuff();">Generate Request [JSON]</button><br><br>
+   <button id="randomButton" onclick="processDataJson();">Process data.json</button><br><br>
    <button><img src="https://c.statcounter.com/12792249/0/85f97432/0/" alt="Web Analytics"  referrerPolicy="no-referrer-when-downgrade"> Visits(20220904)</button>
 </div>
 
