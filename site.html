@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body style="background-color:#1A2735">
-
+<head>
+    <h3>Build Version: 20230316-1103</h3>
+</head>
 <script>
 
+const MASTER_SCHEMA = [];
+const RELATIONSHIPS = [];
+
 window.onload = function() {
+    // fetch("https://raw.githubusercontent.com/cjcaf1995/intersection0915/main/schema.json")
     fetch("schema.json")
         .then(response => response.json())
         .then(data => {
             for (var i = 0; i < data.schema.length; i++){
-                let currRepository = data.schema[i].full;
-                alert("10:32 2023/03/16" + currRepository);
+                let currRepositoryEntry = data.schema[i];
+                SCHEMA.push(currRepositoryEntry);
             }
-        })
+        });
+    // fetch("https://raw.githubusercontent.com/cjcaf1995/intersection0915/main/relationships.json")
+    fetch("relationships.json")
+        .then(response => response.json())
+        .then(data => {
+            for (var i = 0; i < data.all.length; i++){
+                let currEntry = data.all[i];
+                RELATIONSHIPS.push(currEntry);
+            }
+            alert("INITIAL DATA: " + JSON.stringify(RELATIONSHIPS));
+        });
 }
 
 function randomIntFromInterval(min, max) {
@@ -36,7 +52,7 @@ function mergeArrays(array1, array2) {
 }
 
 function queryRecord(name) {
-    return RELATIONSHIPS["all"].find(relationship => {
+    return RELATIONSHIPS.find(relationship => {
       return relationship.name === name;
     });
 }
@@ -59,32 +75,10 @@ function addRelationship(requestObj) {
         existingObj["related"] = mergeArrays(existingObj["related"], requestObj["related"]);
         existingObj["children"] = mergeArrays(existingObj["children"], requestObj["children"]);   
     } else {
-        RELATIONSHIPS["all"].push(requestObj);
+        RELATIONSHIPS.push(requestObj);
     }
 
 }
-
-const RELATIONSHIPS_ARCHIVE = {
-    "all": [
-        // {
-            // "name": "intersection/issues/1",
-            // "parent": [],
-            // "related": [],
-            // "children": []
-        // },
-    ]
-};
-
-const RELATIONSHIPS = {
-    "all": [
-        // {
-            // "name": "intersection/issues/1",
-            // "parent": [],
-            // "related": [],
-            // "children": []
-        // },
-    ]
-};
 
 finalAddRelationship = function(REQUEST_OBJECT) {
     
@@ -92,7 +86,7 @@ finalAddRelationship = function(REQUEST_OBJECT) {
     
     // Identify non-existent relationships (to be added later)
     let arrNewElements = [];
-    RELATIONSHIPS["all"].forEach(function(obj){
+    RELATIONSHIPS.forEach(function(obj){
         let currObjName = obj["name"];
         console.log("MAIN OBJ NAME: " + currObjName);
         let arrParentObj = obj["parent"];
@@ -112,7 +106,7 @@ finalAddRelationship = function(REQUEST_OBJECT) {
     });
     console.log("NEW PARENTS" + JSON.stringify(arrNewElements));
     let arrNewElements2 = [];
-    RELATIONSHIPS["all"].forEach(function(obj){
+    RELATIONSHIPS.forEach(function(obj){
         let currObjName = obj["name"];
         console.log("MAIN OBJ NAME: " + currObjName);
         let arrChildrenObj = obj["children"];
@@ -132,7 +126,7 @@ finalAddRelationship = function(REQUEST_OBJECT) {
     });
     console.log("NEW CHILDREN" + JSON.stringify(arrNewElements2));
     let arrNewElements3 = [];
-    RELATIONSHIPS["all"].forEach(function(obj){
+    RELATIONSHIPS.forEach(function(obj){
         let currObjName = obj["name"];
         console.log("MAIN OBJ NAME: " + currObjName);
         let arrRelatedObj = obj["related"];
@@ -162,8 +156,8 @@ finalAddRelationship = function(REQUEST_OBJECT) {
     arrNewElements3.forEach(function(newObj){
         addRelationship(newObj);
     });
-    console.log(JSON.stringify(RELATIONSHIPS["all"]));
-    RELATIONSHIPS["all"].forEach(function(dbRecord){
+    console.log(JSON.stringify(RELATIONSHIPS));
+    RELATIONSHIPS.forEach(function(dbRecord){
         let currObjName = dbRecord["name"];
         // console.log("CURR OBJ: " + currObjName);
         let currSiblingArray = dbRecord["related"];
@@ -172,8 +166,8 @@ finalAddRelationship = function(REQUEST_OBJECT) {
     
     // Link siblings
     let arrSiblingObjectCollection = [];
-    console.log(JSON.stringify(RELATIONSHIPS["all"]));
-    RELATIONSHIPS["all"].forEach(function(dbRecord){
+    console.log(JSON.stringify(RELATIONSHIPS));
+    RELATIONSHIPS.forEach(function(dbRecord){
         let arrSiblingObjects = [];
         let currObjName = dbRecord["name"];
         console.log("CURR OBJ: " + currObjName);
@@ -199,7 +193,7 @@ finalAddRelationship = function(REQUEST_OBJECT) {
     });
     
     // Remove own name from Related Array (Sibling)
-    RELATIONSHIPS["all"].forEach(function(dbRecord){
+    RELATIONSHIPS.forEach(function(dbRecord){
         let arrSiblingObjects = [];
         let currObjName = dbRecord["name"];
         console.log("CURR OBJ: " + currObjName);
@@ -229,24 +223,13 @@ openStuff = function () {
     // finalAddRelationship(ADD_REQUEST_2);
     // Sample alert(JSON.stringify(RELATIONSHIPS["all"]));
 
-    const SCHEMA = [];
-    SCHEMA.push("intersection_a0");
-    SCHEMA.push("mrz-angular-js-in-action_a1");
-    SCHEMA.push("mrz-spring-boot-in-action_a2");
-    SCHEMA.push("mrz-Linux-in-a-Nutshell_a3");
-    SCHEMA.push("mrz-linux-commands_a4");
-    SCHEMA.push("codebank_a5");
-    SCHEMA.push("aws-book-1_a6");
-    SCHEMA.push("docker-casual_a7");
-    SCHEMA.push("java-casual_a8");
-
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const repositoryArr = SCHEMA;
+    const repositoryArr = MASTER_SCHEMA;
     // const repositoryItemsArr = urlParams.get('repositoryItemsArr').split("/"); // a1_1/a1_2/a1_3/a2_1/a2_2
     const commands = "intersection#43_R_intersection#11/intersection#43_C_java-casual#1";
     const commandArr = commands.split("/");
-    
+    alert(commandArr);
     let arrRequests = [];
     commandArr.forEach(function(commandStr){
         let tokenArr = commandStr.split("_");
@@ -267,7 +250,7 @@ openStuff = function () {
             requestObj["children"].push(thisTarget);
         }
         finalAddRelationship(requestObj);
-        alert(JSON.stringify(RELATIONSHIPS["all"]));
+        alert("ALL: " + JSON.stringify(RELATIONSHIPS));
     })
 
 };
