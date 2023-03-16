@@ -1,10 +1,91 @@
 {
   "commands": [
     {
-      "command": "https://github.com/cjcaf1995/intersection/issues/43,S,https://github.com/cjcaf1995/intersection/issues/11"
+      "command": "https://github.com/cjcaf1995/intersection/issues/43,R,https://github.com/cjcaf1995/intersection/issues/11"
     },
     {
       "command": "https://github.com/cjcaf1995/intersection/issues/43,C,https://github.com/cjcaf1995/java-casual/issues/1"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/42,C,https://github.com/cjcaf1995/docker-casual/issues/18"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/41,C,https://github.com/cjcaf1995/javascript-casual/issues/1"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/40,P,https://github.com/cjcaf1995/intersection/issues/31"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/40,C,https://github.com/cjcaf1995/docker-casual/issues/5"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/40,C,https://github.com/cjcaf1995/docker-casual/issues/23"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/40,C,https://github.com/cjcaf1995/docker-casual/issues/24"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/39,C,https://github.com/cjcaf1995/docker-casual/issues/23"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/39,C,https://github.com/cjcaf1995/docker-casual/issues/16"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/39,C,https://github.com/cjcaf1995/docker-casual/issues/14"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/39,C,https://github.com/cjcaf1995/docker-casual/issues/11"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/39,C,https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/13"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/38,R,https://github.com/cjcaf1995/intersection/issues/37"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/38,C,https://github.com/cjcaf1995/docker-casual/issues/15"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,R,https://github.com/cjcaf1995/intersection/issues/38"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/7"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/8"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/9"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/10"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/12"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/13"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/14"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/16"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/18"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/19"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/20"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/21"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/37,C,https://github.com/cjcaf1995/docker-casual/issues/22"
     }
   ]
 }
