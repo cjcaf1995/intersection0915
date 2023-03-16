@@ -4,159 +4,13 @@
 
 <script>
 
-var links = [];
-
-function randomIntFromInterval(min, max) { // min and max included
-    // const randomNumber = (7 / getRandomNumber(uuidv4())) % 1;
-    const randomNumber = Math.random();
-    return Math.floor(randomNumber * (Number(max) - Number(min) + 1)) + Number(min);
-}
-
-openStuff = function () {
-    
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const rollType = urlParams.get('rollType'); // randomize(default)/list
-    const repositoryArr = urlParams.get('repositoryArr').split("/"); // repo1_a1/repo2_a2
-    const repositoryItemsArr = urlParams.get('repositoryItemsArr').split("/"); // a1_1/a1_2/a1_3/a2_1/a2_2
-    
-    const objRepoArr = [];
-    
-    
-    repositoryArr.forEach(function(id){
-        let currRepositoryName = id.split("_")[0];
-        let currRepositoryId = id.split("_")[1];
-        objRepoArr.push({
-            "repositoryName": currRepositoryName, 
-            "repositoryId": currRepositoryId,
-            "repositoryItemNumbers": [], // actual github issue IDs
-        });
-    });
-    
-    repositoryItemsArr.forEach(function(item){
-        let currRepositoryId = item.split("_")[0];
-        let currRepositoryItemNumber = item.split("_")[1];
-        let objRepo = objRepoArr.find(repo => {
-          return repo.repositoryId === currRepositoryId
-        });
-        
-        // no duplicates
-        if (!objRepo["repositoryItemNumbers"].includes(currRepositoryItemNumber)) {
-            objRepo["repositoryItemNumbers"].push(currRepositoryItemNumber);    
-        }
-    });
-    
-    
-    let nonEmptyObj = []; 
-    for (let i = 0; i < objRepoArr.length; i++) {
-        let objRepo = objRepoArr[i];
-        if (objRepo["repositoryItemNumbers"].length !== 0) {
-            nonEmptyObj.push(i);
-        }
-    }
-    
-    shuffleArray(nonEmptyObj);
-    let objIdx = nonEmptyObj[0];
-    let objTarget = objRepoArr[objIdx];
-    let repositoryItemNumberIdx = randomIntFromInterval(0, objTarget["repositoryItemNumbers"].length - 1);
-    let githubRepositoryName = objTarget["repositoryName"];
-    let githubIssueId = objTarget["repositoryItemNumbers"][repositoryItemNumberIdx];
-    window.open("https://github.com/cjcaf1995/" + githubRepositoryName + "/issues/" + githubIssueId);
-    
-};
-
 window.onload = function() {
     document.getElementById('randomButton').click();
 }
 
-econRated = function () {
-    
-    let url = 'https://raw.githubusercontent.com/cjcaf1995/info/main/limits.js';
-
-    fetch(url)
-    .then(res => res.json())
-    .then(useValueForEconRated)
-    .catch(err => { throw err });    
-};
-
-async function useValueForEconRated(value) {
-
-    var maxOf1s = value["skills0915OneStarMax"];
-    var maxOf2s = value["skills0915TwoStarMax"];
-    var maxOf3s = value["skills0915ThreeStarMax"];
-    var maxOf4s = value["skills0915FourStarMax"];
-    var maxOf5s = value["skills0915FiveStarMax"];
-
-	var buckets = [];
-	var probabilityOf1s = 9;
-	var probabilityOf2s = 13;
-	var probabilityOf3s = 17;
-	var probabilityOf4s = 25;
-	var probabilityOf5s = 36;
-    
-    for (let i = 0; i < probabilityOf1s; i++) {
-      buckets.push(1);
-    }
-    for (let i = 0; i < probabilityOf2s; i++) {
-      buckets.push(2);
-    }
-    for (let i = 0; i < probabilityOf3s; i++) {
-      buckets.push(3);
-    }
-    for (let i = 0; i < probabilityOf4s; i++) {
-      buckets.push(4);
-    }
-    for (let i = 0; i < probabilityOf5s; i++) {
-      buckets.push(5);
-    }
-    
-    var randIdx = getRandomNumber(uuidv4()) % buckets.length;
-    randIdx = parseInt(randIdx, 10);
-    
-    var chosenBucket = [];
-    
-    if (buckets[randIdx] === 1) {
-        for (let i = 1; i <= maxOf1s; i++) {
-          chosenBucket.push(i);
-        }
-    	shuffleArray(chosenBucket);
-        randIdx = getRandomNumber(uuidv4()) % chosenBucket.length;
-        randIdx = parseInt(randIdx, 10);
-        window.open('https://github.com/cjcaf1995/skills0915-one-star/issues/' + chosenBucket[randIdx]);
-    } else if (buckets[randIdx] === 2) {
-        for (let i = 1; i <= maxOf2s; i++) {
-          chosenBucket.push(i);
-        }
-    	shuffleArray(chosenBucket);
-        randIdx = getRandomNumber(uuidv4()) % chosenBucket.length;
-        randIdx = parseInt(randIdx, 10);
-        window.open('https://github.com/cjcaf1995/skills0915-two-star/issues/' + chosenBucket[randIdx]);
-    } else if (buckets[randIdx] === 3) {
-        for (let i = 1; i <= maxOf3s; i++) {
-          chosenBucket.push(i);
-        }
-    	shuffleArray(chosenBucket);
-        randIdx = getRandomNumber(uuidv4()) % chosenBucket.length;
-        randIdx = parseInt(randIdx, 10);
-        window.open('https://github.com/cjcaf1995/skills0915-three-star/issues/' + chosenBucket[randIdx]);
-    } else if (buckets[randIdx] === 4) {
-        for (let i = 1; i <= maxOf4s; i++) {
-          chosenBucket.push(i);
-        }
-    	shuffleArray(chosenBucket);
-        randIdx = getRandomNumber(uuidv4()) % chosenBucket.length;
-        randIdx = parseInt(randIdx, 10);
-        window.open('https://github.com/cjcaf1995/skills0915-four-star/issues/' + chosenBucket[randIdx]);
-    } else if (buckets[randIdx] === 5) {
-        for (let i = 1; i <= maxOf5s; i++) {
-          chosenBucket.push(i);
-        }
-    	shuffleArray(chosenBucket);
-        randIdx = getRandomNumber(uuidv4()) % chosenBucket.length;
-        randIdx = parseInt(randIdx, 10);
-        window.open('https://github.com/cjcaf1995/skills0915-five-star/issues/' + chosenBucket[randIdx]);
-    }
-
+function randomIntFromInterval(min, max) {
+    const randomNumber = Math.random();
+    return Math.floor(randomNumber * (Number(max) - Number(min) + 1)) + Number(min);
 }
 
 function shuffleArray(array) {
@@ -168,329 +22,248 @@ function shuffleArray(array) {
     }
 }
 
-function uuidv4() {
-  return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-  );
+function mergeArrays(array1, array2) {
+    // merge and remove duplicates
+    let mergedArray = array1.concat(array2);
+    return mergedArray.filter((item, pos) => mergedArray.indexOf(item) === pos); 
 }
 
-function getNumberEquivalent(strChar) {
-    let retVal = 0;
-    switch (strChar) {
-      case 'a':
-        retVal = 1;
-        break;
-      case 'b':
-        retVal = 2;
-        break;
-      case 'c':
-        retVal = 3;
-        break;
-      case 'd':
-        retVal = 4;
-        break;
-      case 'e':
-        retVal = 5;
-        break;
-      case 'f':
-        retVal = 6;
-        break;
-      case 'g':
-        retVal = 7;
-        break;
-      case 'h':
-        retVal = 8;
-        break;
-      case 'i':
-        retVal = 9;
-        break;
-      case 'j':
-        retVal = 10;
-        break;
-      case 'k':
-        retVal = 11;
-        break;
-      case 'l':
-        retVal = 12;
-        break;
-      case 'm':
-        retVal = 13;
-        break;
-      case 'n':
-        retVal = 14;
-        break;
-      case 'o':
-        retVal = 15;
-        break;
-      case 'p':
-        retVal = 16;
-        break;
-      case 'q':
-        retVal = 17;
-        break;
-      case 'r':
-        retVal = 18;
-        break;
-      case 's':
-        retVal = 19;
-        break;
-      case 't':
-        retVal = 20;
-        break;
-      case 'u':
-        retVal = 21;
-        break;
-      case 'v':
-        retVal = 22;
-        break;
-      case 'w':
-        retVal = 23;
-        break;
-      case 'x':
-        retVal = 24;
-        break;
-      case 'y':
-        retVal = 25;
-        break;
-      case 'z':
-        retVal = 26;
-        break;
-      default:
-        break;
-    }
-    return retVal;
+function queryRecord(name) {
+    return RELATIONSHIPS["all"].find(relationship => {
+      return relationship.name === name;
+    });
 }
 
-function getRandomNumber(uuidString) {
-    let uuidWithoutDash = uuidString.replaceAll("-", "");
-    var retVal = 0
-    var char01 = uuidWithoutDash.charAt(1 - 1);
-    if (/^\d+$/.test(char01)) {
-        retVal = retVal + Number(char01);
+function hasRecord(name) {
+    let objRel = queryRecord(name);
+    return objRel !== undefined;
+}
+
+function getRecord(name) {
+    return queryRecord(name);
+}
+
+function addRelationship(requestObj) {
+    let alreadyExisting = hasRecord(requestObj["name"]);
+    if (alreadyExisting) {
+        // SIMPLE ADDITION
+        let existingObj = getRecord(requestObj["name"]);
+        existingObj["parent"] = mergeArrays(existingObj["parent"], requestObj["parent"]);
+        existingObj["related"] = mergeArrays(existingObj["related"], requestObj["related"]);
+        existingObj["children"] = mergeArrays(existingObj["children"], requestObj["children"]);   
     } else {
-        retVal = retVal + Number(getNumberEquivalent(char01));
+        RELATIONSHIPS["all"].push(requestObj);
     }
-	
-    var char02 = uuidWithoutDash.charAt(2 - 1);
-    if (/^\d+$/.test(char02)) {
-        retVal = retVal + Number(char02);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char02));
-    }
-	
-    var char03 = uuidWithoutDash.charAt(3 - 1);
-    if (/^\d+$/.test(char03)) {
-        retVal = retVal + Number(char03);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char03));
-    }
-	
-    var char04 = uuidWithoutDash.charAt(4 - 1);
-    if (/^\d+$/.test(char04)) {
-        retVal = retVal + Number(char04);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char04));
-    }
-	
-    var char05 = uuidWithoutDash.charAt(5 - 1);
-    if (/^\d+$/.test(char05)) {
-        retVal = retVal + Number(char05);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char05));
-    }
-	
-    var char06 = uuidWithoutDash.charAt(6 - 1);
-    if (/^\d+$/.test(char06)) {
-        retVal = retVal + Number(char06);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char06));
-    }
-	
-    var char07 = uuidWithoutDash.charAt(7 - 1);
-    if (/^\d+$/.test(char07)) {
-        retVal = retVal + Number(char07);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char07));
-    }
-	
-    var char08 = uuidWithoutDash.charAt(8 - 1);
-    if (/^\d+$/.test(char08)) {
-        retVal = retVal + Number(char08);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char08));
-    }
-	
-    var char09 = uuidWithoutDash.charAt(9 - 1);
-    if (/^\d+$/.test(char09)) {
-        retVal = retVal + Number(char09);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char09));
-    }
-	
-    var char10 = uuidWithoutDash.charAt(10 - 1);
-    if (/^\d+$/.test(char10)) {
-        retVal = retVal + Number(char10);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char10));
-    }
-	
-    var char11 = uuidWithoutDash.charAt(11 - 1);
-    if (/^\d+$/.test(char11)) {
-        retVal = retVal + Number(char11);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char11));
-    }
-	
-    var char12 = uuidWithoutDash.charAt(12 - 1);
-    if (/^\d+$/.test(char12)) {
-        retVal = retVal + Number(char12);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char12));
-    }
-	
-    var char13 = uuidWithoutDash.charAt(13 - 1);
-    if (/^\d+$/.test(char13)) {
-        retVal = retVal + Number(char13);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char13));
-    }
-	
-    var char14 = uuidWithoutDash.charAt(14 - 1);
-    if (/^\d+$/.test(char14)) {
-        retVal = retVal + Number(char14);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char14));
-    }
-	
-    var char15 = uuidWithoutDash.charAt(15 - 1);
-    if (/^\d+$/.test(char15)) {
-        retVal = retVal + Number(char15);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char15));
-    }
-	
-    var char16 = uuidWithoutDash.charAt(16 - 1);
-    if (/^\d+$/.test(char16)) {
-        retVal = retVal + Number(char16);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char16));
-    }
-	
-    var char17 = uuidWithoutDash.charAt(17 - 1);
-    if (/^\d+$/.test(char17)) {
-        retVal = retVal + Number(char17);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char17));
-    }
-	
-    var char18 = uuidWithoutDash.charAt(18 - 1);
-    if (/^\d+$/.test(char18)) {
-        retVal = retVal + Number(char18);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char18));
-    }
-	
-    var char19 = uuidWithoutDash.charAt(19 - 1);
-    if (/^\d+$/.test(char19)) {
-        retVal = retVal + Number(char19);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char19));
-    }
-	
-    var char20 = uuidWithoutDash.charAt(20 - 1);
-    if (/^\d+$/.test(char20)) {
-        retVal = retVal + Number(char20);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char20));
-    }
-	
-    var char21 = uuidWithoutDash.charAt(21 - 1);
-    if (/^\d+$/.test(char21)) {
-        retVal = retVal + Number(char21);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char21));
-    }
-	
-    var char22 = uuidWithoutDash.charAt(22 - 1);
-    if (/^\d+$/.test(char22)) {
-        retVal = retVal + Number(char22);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char22));
-    }
-	
-    var char23 = uuidWithoutDash.charAt(23 - 1);
-    if (/^\d+$/.test(char23)) {
-        retVal = retVal + Number(char23);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char23));
-    }
-	
-    var char24 = uuidWithoutDash.charAt(24 - 1);
-    if (/^\d+$/.test(char24)) {
-        retVal = retVal + Number(char24);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char24));
-    }
-	
-    var char25 = uuidWithoutDash.charAt(25 - 1);
-    if (/^\d+$/.test(char25)) {
-        retVal = retVal + Number(char25);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char25));
-    }
-	
-    var char26 = uuidWithoutDash.charAt(26 - 1);
-    if (/^\d+$/.test(char26)) {
-        retVal = retVal + Number(char26);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char26));
-    }
-	
-    var char27 = uuidWithoutDash.charAt(27 - 1);
-    if (/^\d+$/.test(char27)) {
-        retVal = retVal + Number(char27);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char27));
-    }
-	
-    var char28 = uuidWithoutDash.charAt(28 - 1);
-    if (/^\d+$/.test(char28)) {
-        retVal = retVal + Number(char28);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char28));
-    }
-	
-    var char29 = uuidWithoutDash.charAt(29 - 1);
-    if (/^\d+$/.test(char29)) {
-        retVal = retVal + Number(char29);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char29));
-    }
-	
-    var char30 = uuidWithoutDash.charAt(30 - 1);
-    if (/^\d+$/.test(char30)) {
-        retVal = retVal + Number(char30);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char30));
-    }
-	
-    var char31 = uuidWithoutDash.charAt(31 - 1);
-    if (/^\d+$/.test(char31)) {
-        retVal = retVal + Number(char31);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char31));
-    }
-	
-    var char32 = uuidWithoutDash.charAt(32 - 1);
-    if (/^\d+$/.test(char32)) {
-        retVal = retVal + Number(char32);
-    } else {
-        retVal = retVal + Number(getNumberEquivalent(char32));
-    }
+
+}
+
+const RELATIONSHIPS_ARCHIVE = {
+    "all": [
+        // {
+            // "name": "intersection/issues/1",
+            // "parent": [],
+            // "related": [],
+            // "children": []
+        // },
+    ]
+};
+
+const RELATIONSHIPS = {
+    "all": [
+        // {
+            // "name": "intersection/issues/1",
+            // "parent": [],
+            // "related": [],
+            // "children": []
+        // },
+    ]
+};
+
+finalAddRelationship = function(REQUEST_OBJECT) {
     
-    return ((retVal * 3485038 * Math.floor(Math.random() * 100)) + (new Date().getFullYear() + (new Date().getMonth() + 1) + new Date().getDay() + new Date().getTime())) % 100;
+    addRelationship(REQUEST_OBJECT);
+    
+    // Identify non-existent relationships (to be added later)
+    let arrNewElements = [];
+    RELATIONSHIPS["all"].forEach(function(obj){
+        let currObjName = obj["name"];
+        console.log("MAIN OBJ NAME: " + currObjName);
+        let arrParentObj = obj["parent"];
+        console.log("PARENT ARRAY: " + JSON.stringify(arrParentObj));
+        arrParentObj.forEach(function(parentName){
+            console.log("PARENT ELEMENT: " + parentName);
+            console.log("PARENT ELEMENT exists: " + hasRecord(parentName));
+            if (!hasRecord(parentName)) {
+                arrNewElements.push({
+                    "name": parentName,
+                    "parent": [],
+                    "related": [],
+                    "children": [currObjName]
+                });
+            }
+        });
+    });
+    console.log("NEW PARENTS" + JSON.stringify(arrNewElements));
+    let arrNewElements2 = [];
+    RELATIONSHIPS["all"].forEach(function(obj){
+        let currObjName = obj["name"];
+        console.log("MAIN OBJ NAME: " + currObjName);
+        let arrChildrenObj = obj["children"];
+        console.log("CHILDREN ARRAY: " + JSON.stringify(arrChildrenObj));
+        arrChildrenObj.forEach(function(childName){
+            console.log("CHILD ELEMENT: " + childName);
+            console.log("CHILD ELEMENT exists: " + hasRecord(childName));
+            if (!hasRecord(childName)) {
+                arrNewElements2.push({
+                    "name": childName,
+                    "parent": [currObjName],
+                    "related": [],
+                    "children": []
+                });
+            }
+        });
+    });
+    console.log("NEW CHILDREN" + JSON.stringify(arrNewElements2));
+    let arrNewElements3 = [];
+    RELATIONSHIPS["all"].forEach(function(obj){
+        let currObjName = obj["name"];
+        console.log("MAIN OBJ NAME: " + currObjName);
+        let arrRelatedObj = obj["related"];
+        console.log("SIBLING ARRAY: " + JSON.stringify(arrRelatedObj));
+        arrRelatedObj.forEach(function(siblingName){
+            console.log("SIBLING ELEMENT: " + siblingName);
+            console.log("SIBLING ELEMENT exists: " + hasRecord(siblingName));
+            if (!hasRecord(siblingName)) {
+                arrNewElements3.push({
+                    "name": siblingName,
+                    "parent": [],
+                    "related": [currObjName],
+                    "children": []
+                });
+            }
+        });
+    });
+    console.log("NEW SIBLINGS" + JSON.stringify(arrNewElements3));
+    
+    // Add new elements to the RELATIONSHIP object
+    arrNewElements.forEach(function(newObj){
+        addRelationship(newObj);
+    });
+    arrNewElements2.forEach(function(newObj){
+        addRelationship(newObj);
+    });
+    arrNewElements3.forEach(function(newObj){
+        addRelationship(newObj);
+    });
+    console.log(JSON.stringify(RELATIONSHIPS["all"]));
+    RELATIONSHIPS["all"].forEach(function(dbRecord){
+        let currObjName = dbRecord["name"];
+        // console.log("CURR OBJ: " + currObjName);
+        let currSiblingArray = dbRecord["related"];
+        // console.log("CURR SIBLINGS: " + JSON.stringify(currSiblingArray));
+    });
+    
+    // Link siblings
+    let arrSiblingObjectCollection = [];
+    console.log(JSON.stringify(RELATIONSHIPS["all"]));
+    RELATIONSHIPS["all"].forEach(function(dbRecord){
+        let arrSiblingObjects = [];
+        let currObjName = dbRecord["name"];
+        console.log("CURR OBJ: " + currObjName);
+        let currSiblingArray = dbRecord["related"];
+        console.log("CURR SIBLINGS: " + JSON.stringify(currSiblingArray));
+        arrSiblingObjects = mergeArrays(arrSiblingObjects, currSiblingArray);
+        if (arrSiblingObjects.length > 1) {
+            arrSiblingObjectCollection.push(arrSiblingObjects);
+        }
+        console.log(JSON.stringify(arrSiblingObjectCollection));
+    });
+    arrSiblingObjectCollection.forEach(function(siblingObjArr){
+        console.log(JSON.stringify(siblingObjArr));
+        siblingObjArr.forEach(function(siblingName){
+            let updateRequestPayload = {
+                "name": siblingName,
+                "parent": [],
+                "related": siblingObjArr,
+                "children": []
+            };
+            addRelationship(updateRequestPayload);
+        })
+    });
+    
+    // Remove own name from Related Array (Sibling)
+    RELATIONSHIPS["all"].forEach(function(dbRecord){
+        let arrSiblingObjects = [];
+        let currObjName = dbRecord["name"];
+        console.log("CURR OBJ: " + currObjName);
+        let currSiblingArray = dbRecord["related"];
+        let correctSiblingArray = currSiblingArray.filter(e => e !== dbRecord["name"]);
+        dbRecord["related"] = correctSiblingArray;
+    });
+    // alert("PROPER SIBLING LINKAGES: " + JSON.stringify(RELATIONSHIPS["all"]));
 }
 
+openStuff = function () {
+
+    const SAMPLE_ADD_REQUEST = {
+        "name": "intersection/issues/7",
+        "parent": ["intersection/issues/7-parent"],
+        "related": ["intersection/issues/7-related1", "intersection/issues/7-related2"],
+        "children": ["intersection/issues/7-child1", "intersection/issues/7-child2"]
+    };
+    const SAMPLE_ADD_REQUEST_2 = {
+        "name": "intersection/issues/8",
+        "parent": ["intersection/issues/7"],
+        "related": [],
+        "children": []
+    };
+    // Sample Add Relationships
+    // finalAddRelationship(ADD_REQUEST);
+    // finalAddRelationship(ADD_REQUEST_2);
+    // Sample alert(JSON.stringify(RELATIONSHIPS["all"]));
+
+    const SCHEMA = [];
+    SCHEMA.push("intersection_a0");
+    SCHEMA.push("mrz-angular-js-in-action_a1");
+    SCHEMA.push("mrz-spring-boot-in-action_a2");
+    SCHEMA.push("mrz-Linux-in-a-Nutshell_a3");
+    SCHEMA.push("mrz-linux-commands_a4");
+    SCHEMA.push("codebank_a5");
+    SCHEMA.push("aws-book-1_a6");
+    SCHEMA.push("docker-casual_a7");
+    SCHEMA.push("java-casual_a8");
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const repositoryArr = SCHEMA;
+    // const repositoryItemsArr = urlParams.get('repositoryItemsArr').split("/"); // a1_1/a1_2/a1_3/a2_1/a2_2
+    const commands = "intersection#43_R_intersection#11/intersection#43_C_java-casual#1";
+    const commandArr = commands.split("/");
+    
+    let arrRequests = [];
+    commandArr.forEach(function(commandStr){
+        let tokenArr = commandStr.split("_");
+        let thisName = tokenArr[0];
+        let thisRel = tokenArr[1];
+        let thisTarget = tokenArr[2];
+        let requestObj = {
+            "name": thisName,
+            "parent": [],
+            "related": [],
+            "children": []
+        };
+        if (thisRel === 'P') {
+            requestObj["parent"].push(thisTarget);
+        } else if (thisRel === 'R') {
+            requestObj["related"].push(thisTarget);
+        } else if (thisRel === 'C') {
+            requestObj["children"].push(thisTarget);
+        }
+        finalAddRelationship(requestObj);
+        alert(JSON.stringify(RELATIONSHIPS["all"]));
+    })
+
+};
 </script>
 
 <br>
@@ -499,8 +272,8 @@ function getRandomNumber(uuidString) {
 <br>
 <br>
 <div style="text-align:center">
-   <button id="randomButton" onclick="openStuff();" >RDR</button>
-   <button id="econRated" onclick="econRated();" class="btn btn-success btn-lg">econRated_20230312_1548</button>
+   <button id="randomButton" onclick="openStuff();" >実行</button>
+   <button><img src="https://c.statcounter.com/12792249/0/85f97432/0/" alt="Web Analytics"  referrerPolicy="no-referrer-when-downgrade"> Visits(20220904)</button>
 </div>
 
 </body>
