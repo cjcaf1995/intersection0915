@@ -1,5 +1,5 @@
 {
   "requests": [
-    {"name":"java-casual/issues/1","parent":["intersection/issues/42","intersection/issues/43"],"related":[],"children":[]}
+    {"name":"java-casual/issues/1","parent":["intersection/issues/43"],"related":[],"children":[]}
   ]
 }
