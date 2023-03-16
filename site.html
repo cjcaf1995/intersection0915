@@ -2,34 +2,112 @@
 <html>
 <body style="background-color:#1A2735">
 <head>
-    <h3>Build Version: 20230316-1103</h3>
+    <h3>Build Version: 20230316-1225</h3>
 </head>
 <script>
 
 const MASTER_SCHEMA = [];
 const RELATIONSHIPS = [];
+const GITHUB_ACCOUNT_PREFIX = "https://github.com/cjcaf1995/";
 
 window.onload = function() {
-    // fetch("https://raw.githubusercontent.com/cjcaf1995/intersection0915/main/schema.json")
-    fetch("schema.json")
+    const GITHUB_ACCOUNT = "cjcaf1995";
+    const ENV = "prod";
+    const schemaUrl = ENV === "prod" ? "schema.json" : "https://raw.githubusercontent.com/" + GITHUB_ACCOUNT + "/intersection0915/main/schema.json";
+    const relationshipUrl = ENV === "prod" ? "relationships.json" : "https://raw.githubusercontent.com/" + GITHUB_ACCOUNT + "/intersection0915/main/relationships.json";
+    fetch(schemaUrl)
         .then(response => response.json())
         .then(data => {
             for (var i = 0; i < data.schema.length; i++){
                 let currRepositoryEntry = data.schema[i];
-                SCHEMA.push(currRepositoryEntry);
+                MASTER_SCHEMA.push(currRepositoryEntry);
             }
         });
-    // fetch("https://raw.githubusercontent.com/cjcaf1995/intersection0915/main/relationships.json")
-    fetch("relationships.json")
+    fetch(relationshipUrl)
         .then(response => response.json())
         .then(data => {
             for (var i = 0; i < data.all.length; i++){
                 let currEntry = data.all[i];
                 RELATIONSHIPS.push(currEntry);
             }
-            alert("INITIAL DATA: " + JSON.stringify(RELATIONSHIPS));
+            console.log("INITIAL DATA: " + JSON.stringify(RELATIONSHIPS));
         });
 }
+
+function shortenUrl(githubUrl) {
+    return githubUrl.replaceAll(GITHUB_ACCOUNT_PREFIX, "");
+}
+
+openStuff = function () {
+
+    const SAMPLE_ADD_REQUEST = {
+        "name": "intersection/issues/7",
+        "parent": ["intersection/issues/7-parent"],
+        "related": ["intersection/issues/7-related1", "intersection/issues/7-related2"],
+        "children": ["intersection/issues/7-child1", "intersection/issues/7-child2"]
+    };
+    const SAMPLE_ADD_REQUEST_2 = {
+        "name": "intersection/issues/8",
+        "parent": ["intersection/issues/7"],
+        "related": [],
+        "children": []
+    };
+    // Sample Add Relationships
+    // finalAddRelationship(ADD_REQUEST);
+    // finalAddRelationship(ADD_REQUEST_2);
+    // Sample alert(JSON.stringify(RELATIONSHIPS["all"]));
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const origin = urlParams.get('this');
+    const command = urlParams.get('command');
+    const commandTokenArr = command.split("_");
+    // alert("THIS: " + origin);
+    alert("commandTokenArr: " + commandTokenArr);
+
+    let objCommand = {};
+    for (var i = 0; i < commandTokenArr.length; i++){
+        let currToken = commandTokenArr[i];
+        if (i === 0) {
+            objCommand["commandType"] = currToken;    
+        } else if (i === 1) {
+            objCommand["relationship"] = currToken;
+        } else if (i === 2) {
+            objCommand["targetIssueIds"] = [];
+            let tmpArr = currToken.split("-");
+            tmpArr.forEach(function(issueIdLink) {
+                objCommand["targetIssueIds"].push(shortenUrl(issueIdLink));
+            })
+            
+        }
+    }
+    alert("command object: " + JSON.stringify(objCommand));
+
+    let arrRequests = [];
+    if (1 === 2) {
+        commandTokenArr.forEach(function(commandStr){
+            let tokenArr = commandStr.split("_");
+            let thisName = tokenArr[0];
+            let thisRel = tokenArr[1];
+            let thisTarget = tokenArr[2];
+            let requestObj = {
+                "name": thisName,
+                "parent": [],
+                "related": [],
+                "children": []
+            };
+            if (thisRel === 'P') {
+                requestObj["parent"].push(thisTarget);
+            } else if (thisRel === 'R') {
+                requestObj["related"].push(thisTarget);
+            } else if (thisRel === 'C') {
+                requestObj["children"].push(thisTarget);
+            }
+            // finalAddRelationship(requestObj);
+            alert("ALL: " + JSON.stringify(RELATIONSHIPS));
+        });
+    }
+};
 
 function randomIntFromInterval(min, max) {
     const randomNumber = Math.random();
@@ -204,56 +282,6 @@ finalAddRelationship = function(REQUEST_OBJECT) {
     // alert("PROPER SIBLING LINKAGES: " + JSON.stringify(RELATIONSHIPS["all"]));
 }
 
-openStuff = function () {
-
-    const SAMPLE_ADD_REQUEST = {
-        "name": "intersection/issues/7",
-        "parent": ["intersection/issues/7-parent"],
-        "related": ["intersection/issues/7-related1", "intersection/issues/7-related2"],
-        "children": ["intersection/issues/7-child1", "intersection/issues/7-child2"]
-    };
-    const SAMPLE_ADD_REQUEST_2 = {
-        "name": "intersection/issues/8",
-        "parent": ["intersection/issues/7"],
-        "related": [],
-        "children": []
-    };
-    // Sample Add Relationships
-    // finalAddRelationship(ADD_REQUEST);
-    // finalAddRelationship(ADD_REQUEST_2);
-    // Sample alert(JSON.stringify(RELATIONSHIPS["all"]));
-
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const repositoryArr = MASTER_SCHEMA;
-    // const repositoryItemsArr = urlParams.get('repositoryItemsArr').split("/"); // a1_1/a1_2/a1_3/a2_1/a2_2
-    const commands = "intersection#43_R_intersection#11/intersection#43_C_java-casual#1";
-    const commandArr = commands.split("/");
-    alert(commandArr);
-    let arrRequests = [];
-    commandArr.forEach(function(commandStr){
-        let tokenArr = commandStr.split("_");
-        let thisName = tokenArr[0];
-        let thisRel = tokenArr[1];
-        let thisTarget = tokenArr[2];
-        let requestObj = {
-            "name": thisName,
-            "parent": [],
-            "related": [],
-            "children": []
-        };
-        if (thisRel === 'P') {
-            requestObj["parent"].push(thisTarget);
-        } else if (thisRel === 'R') {
-            requestObj["related"].push(thisTarget);
-        } else if (thisRel === 'C') {
-            requestObj["children"].push(thisTarget);
-        }
-        finalAddRelationship(requestObj);
-        alert("ALL: " + JSON.stringify(RELATIONSHIPS));
-    })
-
-};
 </script>
 
 <br>
@@ -262,7 +290,7 @@ openStuff = function () {
 <br>
 <br>
 <div style="text-align:center">
-   <button id="randomButton" onclick="openStuff();" >実行</button>
+   <button id="randomButton" onclick="openStuff();">実行</button>
    <button><img src="https://c.statcounter.com/12792249/0/85f97432/0/" alt="Web Analytics"  referrerPolicy="no-referrer-when-downgrade"> Visits(20220904)</button>
 </div>
 
