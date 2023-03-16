@@ -2,7 +2,7 @@
 <html>
 <body style="background-color:#1A2735">
 <head>
-    <h3>Build Version: 20230316-1455</h3>
+    <h3>Build Version: 20230316-1501</h3>
 </head>
 <script>
 
@@ -63,6 +63,23 @@ processDataJson = function () {
     link.setAttribute("download", new Date() + "_RELATIONSHIPS.json");
     document.body.appendChild(link); // Required for FF
     link.click(); // This will download the JSON
+}
+
+roll = function() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const originThis = urlParams.get('this');
+    let thisObject = getRecord(originThis);
+    let tmpArr = [];
+    let tmpArr2 = [];
+    tmpArr2 = mergeArrays(tmpArr2, thisObject["parent"]);
+    tmpArr = mergeArrays(tmpArr, tmpArr2);
+    tmpArr2 = mergeArrays(tmpArr2, thisObject["related"]);
+    tmpArr = mergeArrays(tmpArr, tmpArr2);
+    tmpArr2 = mergeArrays(tmpArr2, thisObject["children"]);
+    tmpArr = mergeArrays(tmpArr, tmpArr2);
+    shuffleArray(tmpArr);
+    window.open("https://github.com/cjcaf1995/" + tmpArr[0]);
 }
 
 openStuff = function () {
@@ -139,19 +156,6 @@ openStuff = function () {
                 requestObj["related"] = [];
                 requestObj["children"] = [];
                 ALL_REQUEST_OBJECTS.push(requestObj);
-            }
-            if (objCommand["commandType"] === "ROLL") {
-                let thisObject = getRecord(originThis);
-                let tmpArr = [];
-                let tmpArr2 = [];
-                tmpArr2 = mergeArrays(tmpArr2, thisObject["parent"]);
-                tmpArr = mergeArrays(tmpArr, tmpArr2);
-                tmpArr2 = mergeArrays(tmpArr2, thisObject["related"]);
-                tmpArr = mergeArrays(tmpArr, tmpArr2);
-                tmpArr2 = mergeArrays(tmpArr2, thisObject["children"]);
-                tmpArr = mergeArrays(tmpArr, tmpArr2);
-                shuffleArray(tmpArr);
-                window.open("https://github.com/cjcaf1995/" + tmpArr[0]);
             }
     });
     console.log("ALL (After Operation): " + JSON.stringify(RELATIONSHIPS));
@@ -356,6 +360,7 @@ finalAddRelationship = function(REQUEST_OBJECT) {
 <div style="text-align:center">
    <button id="randomButton" onclick="openStuff();">Generate Request [JSON]</button><br><br>
    <button id="randomButton" onclick="processDataJson();">Process data.json</button><br><br>
+   <button id="randomButton" onclick="roll();">Roll the Dice</button><br><br>
    <button><img src="https://c.statcounter.com/12792249/0/85f97432/0/" alt="Web Analytics"  referrerPolicy="no-referrer-when-downgrade"> Visits(20220904)</button>
 </div>
 
