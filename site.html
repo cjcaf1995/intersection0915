@@ -142,9 +142,6 @@ window.onload = function() {
     const GITHUB_COMPLETE_PREFIX = GITHUB_RAW_PREFIX + GITHUB_ACCOUNT + "/" + GITHUB_REPO;
     const isProd = true;
     const schemaUrl = isProd ? "schema.json" : GITHUB_COMPLETE_PREFIX + "/main/schema.json";
-    const relationshipUrl = isProd ? "relationships.json" : GITHUB_COMPLETE_PREFIX + "/main/relationships.json";
-    const requestsUrl = isProd ? "data.json" : GITHUB_COMPLETE_PREFIX + "/main/data.json";
-    const commandListUrl = isProd ? "commandList.json" : GITHUB_COMPLETE_PREFIX + "/main/commandList.json";
     fetch(schemaUrl)
         .then(response => response.json())
         .then(data => {
@@ -153,6 +150,7 @@ window.onload = function() {
                 MASTER_SCHEMA.push(currRepositoryEntry);
             }
         });
+    const commandListUrl = isProd ? "commandList.json" : GITHUB_COMPLETE_PREFIX + "/main/commandList.json";
     fetch(commandListUrl)
         .then(response => response.json())
         .then(data => {
