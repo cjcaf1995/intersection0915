@@ -1,0 +1,40 @@
+{
+  "schema": [
+    {
+      "full": "intersection",
+      "short": "a0"
+    },
+    {
+      "full": "mrz-angular-js-in-action",
+      "short": "a1"
+    },
+    {
+      "full": "mrz-spring-boot-in-action",
+      "short": "a2"
+    },
+    {
+      "full": "mrz-Linux-in-a-Nutshell",
+      "short": "a3"
+    },
+    {
+      "full": "mrz-linux-commands",
+      "short": "a4"
+    },
+    {
+      "full": "codebank",
+      "short": "a5"
+    },
+    {
+      "full": "aws-book-1",
+      "short": "a6"
+    },
+    {
+      "full": "docker-casual",
+      "short": "a7"
+    },
+    {
+      "full": "java-casual",
+      "short": "a8"
+    }
+  ]
+}
