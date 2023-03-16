@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body style="background-color:#1A2735">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: 20230316-2052 </h3>
+    <h3>Build Version: 20230316-2132 </h3>
 </head>
 <script>
 
@@ -111,7 +112,27 @@ roll = function () {
         }
     });
     
-    alert(JSON.stringify(RELATIONSHIPS));
+    // Gather related nodes
+    let completeNodes = [];
+    let relatedNodes = [];
+    let thisExistingObj = getRecord(originThis);
+    relatedNodes = mergeArrays(relatedNodes, thisExistingObj["parent"]);
+    relatedNodes = mergeArrays(relatedNodes, thisExistingObj["related"]);
+    relatedNodes = mergeArrays(relatedNodes, thisExistingObj["children"]);
+    completeNodes = mergeArrays(completeNodes, relatedNodes);
+    relatedNodes.forEach(function(node){
+        let thisExistingNode = getRecord(node);
+        completeNodes =  mergeArrays(completeNodes, thisExistingNode["parent"]);
+        completeNodes =  mergeArrays(completeNodes, thisExistingNode["related"]);
+        completeNodes =  mergeArrays(completeNodes, thisExistingNode["children"]);
+    });
+    
+    // Remove originThis from related nodes
+    var filteredNodes = completeNodes.filter(function(e) { return e !== originThis })
+    
+    // alert(JSON.stringify(RELATIONSHIPS));
+    shuffleArray(filteredNodes);
+    window.open("https://github.com/cjcaf1995/" + filteredNodes[0]);
 };
 
 window.onload = function() {
@@ -137,7 +158,6 @@ window.onload = function() {
         .then(data => {
             for (var i = 0; i < data.commands.length; i++){
                 let currLine = data.commands[i];
-                alert(currLine["command"]);
                 CSV_COMMAND_LIST.push(currLine["command"]);
             }
         });
@@ -207,8 +227,8 @@ function getRecord(name) {
 <br>
 <br>
 <div style="text-align:center">
-   <button id="randomButton" onclick="roll();">Roll the Dice</button><br><br>
-   <button><img src="https://c.statcounter.com/12792249/0/85f97432/0/" alt="Web Analytics"  referrerPolicy="no-referrer-when-downgrade"> Visits(20220904)</button>
+   <button id="randomButton" onclick="roll();" class="btn btn-success btn-lg">Roll the Dice</button><br><br>
+   <button class="btn btn-success btn-lg"><img src="https://c.statcounter.com/12792249/0/85f97432/0/" alt="Web Analytics"  referrerPolicy="no-referrer-when-downgrade"> Visits(20220904)</button>
 </div>
 
 </body>
