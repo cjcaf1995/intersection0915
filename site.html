@@ -5,16 +5,15 @@
 <script>
 
 window.onload = function() {
-    // document.getElementById('randomButton').click();
-    $(function() {
-    var people = [];
-        $.getJSON('schema.json', function(data) {
-            $.each(data.schema, function(i, f) {
-                alert(JSON.stringify(f));
-            });
-        });
-     });
-    }
+    fetch("schema.json")
+        .then(response => response.json())
+        .then(data => {
+            for (var i = 0; i < data.schema.length; i++){
+                let currRepository = data.schema[i].full;
+                alert(currRepository);
+            }
+        })
+}
 
 function randomIntFromInterval(min, max) {
     const randomNumber = Math.random();
@@ -280,7 +279,7 @@ openStuff = function () {
 <br>
 <br>
 <div style="text-align:center">
-   <button id="randomButton" onclick="openStuff();" >実行 2023-03-16-1017</button>
+   <button id="randomButton" onclick="openStuff();" >実行</button>
    <button><img src="https://c.statcounter.com/12792249/0/85f97432/0/" alt="Web Analytics"  referrerPolicy="no-referrer-when-downgrade"> Visits(20220904)</button>
 </div>
 
