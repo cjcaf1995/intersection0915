@@ -2,7 +2,7 @@
 <html>
 <body style="background-color:#1A2735">
 <head>
-    <h3>Build Version: 20230316-1225</h3>
+    <h3>Build Version: 20230316-1250</h3>
 </head>
 <script>
 
@@ -59,10 +59,10 @@ openStuff = function () {
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const origin = urlParams.get('this');
+    const originThis = urlParams.get('this');
     const command = urlParams.get('command');
     const commandTokenArr = command.split("_");
-    // alert("THIS: " + origin);
+    // alert("THIS: " + originThis);
     alert("commandTokenArr: " + commandTokenArr);
 
     let objCommand = {};
@@ -81,32 +81,31 @@ openStuff = function () {
             
         }
     }
-    alert("command object: " + JSON.stringify(objCommand));
-
-    let arrRequests = [];
-    if (1 === 2) {
-        commandTokenArr.forEach(function(commandStr){
-            let tokenArr = commandStr.split("_");
-            let thisName = tokenArr[0];
-            let thisRel = tokenArr[1];
-            let thisTarget = tokenArr[2];
+    console.log("command object: " + JSON.stringify(objCommand));
+    
+    let objCommandArr = [objCommand];
+    objCommandArr.forEach(function(objCommand){
             let requestObj = {
-                "name": thisName,
+                "name": originThis,
                 "parent": [],
                 "related": [],
                 "children": []
             };
-            if (thisRel === 'P') {
-                requestObj["parent"].push(thisTarget);
-            } else if (thisRel === 'R') {
-                requestObj["related"].push(thisTarget);
-            } else if (thisRel === 'C') {
-                requestObj["children"].push(thisTarget);
+            if (objCommand["commandType"] === "ADD") {
+                if (objCommand["relationship"] === "P") {
+                    requestObj["parent"] = objCommand["targetIssueIds"];
+                }
+                if (objCommand["relationship"] === "R") {
+                    requestObj["related"] = objCommand["targetIssueIds"];
+                }
+                if (objCommand["relationship"] === "C") {
+                    requestObj["children"] = objCommand["targetIssueIds"];
+                }
+                finalAddRelationship(requestObj);
             }
-            // finalAddRelationship(requestObj);
-            alert("ALL: " + JSON.stringify(RELATIONSHIPS));
-        });
-    }
+    });
+    
+    alert("ALL (After Operation): " + JSON.stringify(RELATIONSHIPS));
 };
 
 function randomIntFromInterval(min, max) {
