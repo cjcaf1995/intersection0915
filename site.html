@@ -2,14 +2,14 @@
 <html>
 <body style="background-color:#1A2735">
 <head>
-    <h3>Build Version: 20230316-1930</h3>
+    <h3>Build Version: 20230316-2042</h3>
 </head>
 <script>
 
 const REQUESTS_JSON = [];
 const MASTER_SCHEMA = [];
 const RELATIONSHIPS = [];
-// const RELATIONSHIPS = [{"name":"java-casual/issues/1","parent":[],"related":[],"children":[]}];
+const CSV_COMMAND_LIST = [];
 const GITHUB_ACCOUNT_PREFIX = "https://github.com/cjcaf1995/";
 
 roll = function () {
@@ -27,9 +27,9 @@ roll = function () {
     
     let csvCommandListDedup = [];
     const CSV_COMMAND_LIST_COMPLETE = [];
-    const CSV_COMMAND_LIST = [];
-    CSV_COMMAND_LIST.push("https://github.com/cjcaf1995/intersection/issues/43,S,https://github.com/cjcaf1995/intersection/issues/11");
-    CSV_COMMAND_LIST.push("https://github.com/cjcaf1995/intersection/issues/43,C,https://github.com/cjcaf1995/java-casual/issues/1");
+
+    // CSV_COMMAND_LIST.push("https://github.com/cjcaf1995/intersection/issues/43,S,https://github.com/cjcaf1995/intersection/issues/11");
+    // CSV_COMMAND_LIST.push("https://github.com/cjcaf1995/intersection/issues/43,C,https://github.com/cjcaf1995/java-casual/issues/1");
     
     // remove duplicates
     csvCommandListDedup = CSV_COMMAND_LIST.sort().filter(function(item, pos, ary) {
@@ -142,16 +142,25 @@ window.onload = function() {
     const GITHUB_ACCOUNT = "cjcaf1995";
     const GITHUB_REPO = "intersection0915";
     const GITHUB_COMPLETE_PREFIX = GITHUB_RAW_PREFIX + GITHUB_ACCOUNT + "/" + GITHUB_REPO;
-    const isProd = false;
+    const isProd = true;
     const schemaUrl = isProd ? "schema.json" : GITHUB_COMPLETE_PREFIX + "/main/schema.json";
     const relationshipUrl = isProd ? "relationships.json" : GITHUB_COMPLETE_PREFIX + "/main/relationships.json";
     const requestsUrl = isProd ? "data.json" : GITHUB_COMPLETE_PREFIX + "/main/data.json";
+    const commandListUrl = isProd ? "commandList.json" : GITHUB_COMPLETE_PREFIX + "/main/commandList.json";
     fetch(schemaUrl)
         .then(response => response.json())
         .then(data => {
             for (var i = 0; i < data.schema.length; i++){
                 let currRepositoryEntry = data.schema[i];
                 MASTER_SCHEMA.push(currRepositoryEntry);
+            }
+        });
+    fetch(commandListUrl)
+        .then(response => response.json())
+        .then(data => {
+            for (var i = 0; i < data.commands.length; i++){
+                let currLine = data.commands[i];
+                CSV_COMMAND_LIST.push(currLine);
             }
         });
     document.getElementById('randomButton').click();
