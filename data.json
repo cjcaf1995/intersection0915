@@ -1,4 +1,22 @@
-[
-{"name":"java-casual/issues/1","parent":["intersection/issues/55","intersection/issues/56"],"related":[],"children":[]},
-{"name":"java-casual/issues/2","parent":["intersection/issues/55","intersection/issues/56"],"related":[],"children":[]}
-]
+{
+  "requests": [
+    {
+      "name": "java-casual/issues/1",
+      "parent": [
+        "intersection/issues/55",
+        "intersection/issues/56"
+      ],
+      "related": [],
+      "children": []
+    },
+    {
+      "name": "java-casual/issues/2",
+      "parent": [
+        "intersection/issues/55",
+        "intersection/issues/56"
+      ],
+      "related": [],
+      "children": []
+    }
+  ]
+}
