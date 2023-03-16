@@ -2,8 +2,7 @@
 <html>
 <body style="background-color:#1A2735">
 <head>
-    <h3>Milestone: 20230316-1507 - Roll Function Working</h3>
-    <h3>Build Version: 20230316-1507 - Confirmation</h3>
+    <h3>Build Version: 20230316-1518</h3>
 </head>
 <script>
 
@@ -44,8 +43,6 @@ window.onload = function() {
             }
             alert("REQUESTS: " + JSON.stringify(RELATIONSHIPS));
         });
-    
-    document.getElementById('rollButton').click();
 }
 
 function shortenUrl(githubUrl) {
@@ -72,21 +69,17 @@ roll = function() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const originThis = urlParams.get('this');
-    const command = urlParams.get('command');
-    
-    if (command === 'ROLL') {
-        let thisObject = getRecord(originThis);
-        let tmpArr = [];
-        let tmpArr2 = [];
-        tmpArr2 = mergeArrays(tmpArr2, thisObject["parent"]);
-        tmpArr = mergeArrays(tmpArr, tmpArr2);
-        tmpArr2 = mergeArrays(tmpArr2, thisObject["related"]);
-        tmpArr = mergeArrays(tmpArr, tmpArr2);
-        tmpArr2 = mergeArrays(tmpArr2, thisObject["children"]);
-        tmpArr = mergeArrays(tmpArr, tmpArr2);
-        shuffleArray(tmpArr);
-        window.open("https://github.com/cjcaf1995/" + tmpArr[0]);
-    }
+    let thisObject = getRecord(originThis);
+    let tmpArr = [];
+    let tmpArr2 = [];
+    tmpArr2 = mergeArrays(tmpArr2, thisObject["parent"]);
+    tmpArr = mergeArrays(tmpArr, tmpArr2);
+    tmpArr2 = mergeArrays(tmpArr2, thisObject["related"]);
+    tmpArr = mergeArrays(tmpArr, tmpArr2);
+    tmpArr2 = mergeArrays(tmpArr2, thisObject["children"]);
+    tmpArr = mergeArrays(tmpArr, tmpArr2);
+    shuffleArray(tmpArr);
+    window.open("https://github.com/cjcaf1995/" + tmpArr[0]);
 }
 
 openStuff = function () {
@@ -365,8 +358,8 @@ finalAddRelationship = function(REQUEST_OBJECT) {
 <br>
 <br>
 <div style="text-align:center">
-   <button id="generateButton" onclick="openStuff();">Generate Request [JSON]</button><br><br>
-   <button id="processButton" onclick="processDataJson();">Process data.json</button><br><br>
+   <button id="randomButton" onclick="openStuff();">Generate Request [JSON]</button><br><br>
+   <button id="randomButton" onclick="processDataJson();">Process data.json</button><br><br>
    <button id="randomButton" onclick="roll();">Roll the Dice</button><br><br>
    <button><img src="https://c.statcounter.com/12792249/0/85f97432/0/" alt="Web Analytics"  referrerPolicy="no-referrer-when-downgrade"> Visits(20220904)</button>
 </div>
