@@ -2,21 +2,150 @@
 <html>
 <body style="background-color:#1A2735">
 <head>
-    <h3>Build Version: 20230316-1518</h3>
+    <h3>Build Version: 20230316-1930</h3>
 </head>
 <script>
 
 const REQUESTS_JSON = [];
 const MASTER_SCHEMA = [];
 const RELATIONSHIPS = [];
+// const RELATIONSHIPS = [{"name":"java-casual/issues/1","parent":[],"related":[],"children":[]}];
 const GITHUB_ACCOUNT_PREFIX = "https://github.com/cjcaf1995/";
 
+roll = function () {
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    // const originThis = urlParams.get('this');
+    const originThis = "java-casual/issues/1";
+    // const command = urlParams.get('command');
+    // const commandTokenArr = command.split("_");
+    // alert("THIS: " + originThis);
+    // if (commandTokenArr.length > 0) {
+        //alert("commandTokenArr: " + commandTokenArr);
+    //}
+    
+    let csvCommandListDedup = [];
+    const CSV_COMMAND_LIST_COMPLETE = [];
+    const CSV_COMMAND_LIST = [];
+    CSV_COMMAND_LIST.push("https://github.com/cjcaf1995/intersection/issues/43,S,https://github.com/cjcaf1995/intersection/issues/11");
+    CSV_COMMAND_LIST.push("https://github.com/cjcaf1995/intersection/issues/43,C,https://github.com/cjcaf1995/java-casual/issues/1");
+    
+    // remove duplicates
+    csvCommandListDedup = CSV_COMMAND_LIST.sort().filter(function(item, pos, ary) {
+        return !pos || item != ary[pos - 1];
+    });
+    
+    // CREATE CORRESPONDING ENTRIES
+    csvCommandListDedup.forEach(function(command){
+        
+        let currOrigin = shortenUrl(command.split(",")[0]);
+        let currRel = command.split(",")[1];
+        let currTarget = shortenUrl(command.split(",")[2]);
+        // alert("currOrigin: " + currOrigin);
+        // alert("currRel: " + currRel);
+        // alert("currTargetIds: " + currTarget);
+        
+        let currOrigin_v2 = currTarget;
+        let currRel_v2;
+        let currTarget_v2 = currOrigin;
+        if (currRel === 'P') {
+            currRel_v2 = 'C';   
+        } else if (currRel === 'S') {
+            currRel_v2 = 'S';    
+        } else if (currRel === 'C') {
+            currRel_v2 = 'P';   
+        }
+        
+        let originalEntry = [currOrigin, currRel, currTarget].join(",");
+        let mirrorEntry = [currOrigin_v2, currRel_v2, currTarget_v2].join(",");
+        if (!CSV_COMMAND_LIST_COMPLETE.includes(originalEntry)) {
+            CSV_COMMAND_LIST_COMPLETE.push(originalEntry);
+        }
+        if (!CSV_COMMAND_LIST_COMPLETE.includes(mirrorEntry)) {
+            CSV_COMMAND_LIST_COMPLETE.push(mirrorEntry);
+        }
+    });
+    
+    // alert(CSV_COMMAND_LIST_COMPLETE);
+    
+    CSV_COMMAND_LIST_COMPLETE.forEach(function(command){
+        let currOrigin = shortenUrl(command.split(",")[0]);
+        let currRel = command.split(",")[1];
+        let currTarget = shortenUrl(command.split(",")[2]);
+        // alert("currOrigin: " + currOrigin);
+        // alert("currRel: " + currRel);
+        // alert("currTargetIds: " + currTarget);
+        
+        if (currRel === 'P') {
+            if (hasRecord(currOrigin)) {
+                // alert("hasRecord");
+                let existingThis = getRecord(currOrigin);
+                existingThis["parent"] = mergeArrays(existingThis["parent"], [currTarget]);
+                // alert(JSON.stringify(existingThis));
+            } else {
+                // alert("noRecord");
+                RELATIONSHIPS.push({
+                    "name": currOrigin,
+                    "parent": [currTarget],
+                    "related": [],
+                    "children": []
+                });
+                // alert(JSON.stringify(RELATIONSHIPS));
+            }
+        }
+        
+        if (currRel === 'C') {
+            if (hasRecord(currOrigin)) {
+                // alert("hasRecord");
+                let existingThis = getRecord(currOrigin);
+                existingThis["children"] = mergeArrays(existingThis["children"], [currTarget]);
+                // alert(JSON.stringify(existingThis));
+            } else {
+                // alert("noRecord");
+                RELATIONSHIPS.push({
+                    "name": currOrigin,
+                    "parent": [],
+                    "related": [],
+                    "children": [currTarget]
+                });
+                // alert(JSON.stringify(RELATIONSHIPS));
+            }
+        }
+        
+        if (currRel === 'S') {
+            if (hasRecord(currOrigin)) {
+                // alert("hasRecord");
+                let existingThis = getRecord(currOrigin);
+                existingThis["related"] = mergeArrays(existingThis["related"], [currTarget]);
+                // alert(JSON.stringify(existingThis));
+            } else {
+                // alert("noRecord");
+                RELATIONSHIPS.push({
+                    "name": currOrigin,
+                    "parent": [],
+                    "related": [currTarget],
+                    "children": []
+                });
+                // alert(JSON.stringify(RELATIONSHIPS));
+            }
+        }
+    });
+    
+    alert(JSON.stringify(RELATIONSHIPS));
+    
+    
+};
+
 window.onload = function() {
+    const GITHUB_RAW_PREFIX = "https://raw.githubusercontent.com/";
     const GITHUB_ACCOUNT = "cjcaf1995";
-    const ENV = "prod";
-    const schemaUrl = ENV === "prod" ? "schema.json" : "https://raw.githubusercontent.com/" + GITHUB_ACCOUNT + "/intersection0915/main/schema.json";
-    const relationshipUrl = ENV === "prod" ? "relationships.json" : "https://raw.githubusercontent.com/" + GITHUB_ACCOUNT + "/intersection0915/main/relationships.json";
-    const requestsUrl = ENV === "prod" ? "data.json" : "https://raw.githubusercontent.com/" + GITHUB_ACCOUNT + "/intersection0915/main/data.json";
+    const GITHUB_REPO = "intersection0915";
+    const GITHUB_COMPLETE_PREFIX = GITHUB_RAW_PREFIX + GITHUB_ACCOUNT + "/" + GITHUB_REPO;
+    const isProd = false;
+    const schemaUrl = isProd ? "schema.json" : GITHUB_COMPLETE_PREFIX + "/main/schema.json";
+    const relationshipUrl = isProd ? "relationships.json" : GITHUB_COMPLETE_PREFIX + "/main/relationships.json";
+    const requestsUrl = isProd ? "data.json" : GITHUB_COMPLETE_PREFIX + "/main/data.json";
     fetch(schemaUrl)
         .then(response => response.json())
         .then(data => {
@@ -25,24 +154,7 @@ window.onload = function() {
                 MASTER_SCHEMA.push(currRepositoryEntry);
             }
         });
-    fetch(relationshipUrl)
-        .then(response => response.json())
-        .then(data => {
-            for (var i = 0; i < data.all.length; i++){
-                let currEntry = data.all[i];
-                RELATIONSHIPS.push(currEntry);
-            }
-            alert("INITIAL DATA: " + JSON.stringify(RELATIONSHIPS));
-        });
-    fetch(requestsUrl)
-        .then(response => response.json())
-        .then(data => {
-            for (var i = 0; i < data.requests.length; i++){
-                let currEntry = data.requests[i];
-                RELATIONSHIPS.push(currEntry);
-            }
-            alert("REQUESTS: " + JSON.stringify(RELATIONSHIPS));
-        });
+    document.getElementById('randomButton').click();
 }
 
 function shortenUrl(githubUrl) {
@@ -64,116 +176,6 @@ processDataJson = function () {
     document.body.appendChild(link); // Required for FF
     link.click(); // This will download the JSON
 }
-
-roll = function() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const originThis = urlParams.get('this');
-    let thisObject = getRecord(originThis);
-    let tmpArr = [];
-    let tmpArr2 = [];
-    tmpArr2 = mergeArrays(tmpArr2, thisObject["parent"]);
-    tmpArr = mergeArrays(tmpArr, tmpArr2);
-    tmpArr2 = mergeArrays(tmpArr2, thisObject["related"]);
-    tmpArr = mergeArrays(tmpArr, tmpArr2);
-    tmpArr2 = mergeArrays(tmpArr2, thisObject["children"]);
-    tmpArr = mergeArrays(tmpArr, tmpArr2);
-    shuffleArray(tmpArr);
-    window.open("https://github.com/cjcaf1995/" + tmpArr[0]);
-}
-
-openStuff = function () {
-
-    const SAMPLE_ADD_REQUEST = {
-        "name": "intersection/issues/7",
-        "parent": ["intersection/issues/7-parent"],
-        "related": ["intersection/issues/7-related1", "intersection/issues/7-related2"],
-        "children": ["intersection/issues/7-child1", "intersection/issues/7-child2"]
-    };
-    const SAMPLE_ADD_REQUEST_2 = {
-        "name": "intersection/issues/8",
-        "parent": ["intersection/issues/7"],
-        "related": [],
-        "children": []
-    };
-    // Sample Add Relationships
-    // finalAddRelationship(ADD_REQUEST);
-    // finalAddRelationship(ADD_REQUEST_2);
-    // Sample alert(JSON.stringify(RELATIONSHIPS["all"]));
-
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const originThis = urlParams.get('this');
-    const command = urlParams.get('command');
-    const commandTokenArr = command.split("_");
-    alert("THIS: " + originThis);
-    if (commandTokenArr.length > 0) {
-        alert("commandTokenArr: " + commandTokenArr);
-    }
-    
-    let objCommand = {};
-    for (var i = 0; i < commandTokenArr.length; i++){
-        let currToken = commandTokenArr[i];
-        if (i === 0) {
-            objCommand["commandType"] = currToken;    
-        } else if (i === 1) {
-            objCommand["relationship"] = currToken;
-        } else if (i === 2) {
-            objCommand["targetIssueIds"] = [];
-            let tmpArr = currToken.split("-");
-            tmpArr.forEach(function(issueIdLink) {
-                objCommand["targetIssueIds"].push(shortenUrl(issueIdLink));
-            })
-            
-        }
-    }
-    console.log("command object: " + JSON.stringify(objCommand));
-    
-    let ALL_REQUEST_OBJECTS = [];
-    let objCommandArr = [objCommand];
-    objCommandArr.forEach(function(objCommand){
-            let requestObj = {
-                "name": originThis,
-                "parent": [],
-                "related": [],
-                "children": []
-            };
-            if (objCommand["commandType"] === "ADD") {
-                if (objCommand["relationship"] === "P") {
-                    requestObj["parent"] = objCommand["targetIssueIds"];
-                }
-                if (objCommand["relationship"] === "R") {
-                    requestObj["related"] = objCommand["targetIssueIds"];
-                }
-                if (objCommand["relationship"] === "C") {
-                    requestObj["children"] = objCommand["targetIssueIds"];
-                }
-                // finalAddRelationship(requestObj); // ------------------ MAIN COMMAND THAT PERFORMS ------------------
-                ALL_REQUEST_OBJECTS.push(requestObj);
-            }
-            if (objCommand["commandType"] === "NEW") {
-                requestObj["parent"] = [];
-                requestObj["related"] = [];
-                requestObj["children"] = [];
-                ALL_REQUEST_OBJECTS.push(requestObj);
-            }
-    });
-    console.log("ALL (After Operation): " + JSON.stringify(RELATIONSHIPS));
-    
-    // 1 Request <--> 1 JSON file
-    ALL_REQUEST_OBJECTS.forEach(function(requestObj){
-        let jsonContent = "data:text/json;charset=utf-8," + JSON.stringify(requestObj);
-        var encodedUri = encodeURI(jsonContent);
-        // window.open(encodedUri);
-        var link = document.createElement("a");
-        link.setAttribute("href", encodedUri);
-        const currDate = new Date().toISOString().split('T')[0];
-        link.setAttribute("download", "request_" + requestObj["name"] + currDate + "_" + (Math.random() * 100) +  ".json");
-        document.body.appendChild(link); // Required for FF
-        link.click(); // This will download the JSON
-    });
-    
-};
 
 function randomIntFromInterval(min, max) {
     const randomNumber = Math.random();
@@ -225,129 +227,7 @@ function addRelationship(requestObj) {
 }
 
 finalAddRelationship = function(REQUEST_OBJECT) {
-    
-    alert("CURR REQUEST OBJ: " + JSON.stringify(REQUEST_OBJECT));
-    addRelationship(REQUEST_OBJECT);
-    alert("RELATIONSHIPS (after addRelationship): " + JSON.stringify(RELATIONSHIPS));
-    
-    // Identify non-existent relationships (to be added later)
-    let arrNewElements = [];
-    RELATIONSHIPS.forEach(function(obj){
-        let currObjName = obj["name"];
-        console.log("MAIN OBJ NAME: " + currObjName);
-        let arrParentObj = obj["parent"];
-        console.log("PARENT ARRAY: " + JSON.stringify(arrParentObj));
-        arrParentObj.forEach(function(parentName){
-            console.log("PARENT ELEMENT: " + parentName);
-            console.log("PARENT ELEMENT exists: " + hasRecord(parentName));
-            if (!hasRecord(parentName)) {
-                arrNewElements.push({
-                    "name": parentName,
-                    "parent": [],
-                    "related": [],
-                    "children": [currObjName]
-                });
-            }
-        });
-    });
-    console.log("NEW PARENTS" + JSON.stringify(arrNewElements));
-    let arrNewElements2 = [];
-    RELATIONSHIPS.forEach(function(obj){
-        let currObjName = obj["name"];
-        console.log("MAIN OBJ NAME: " + currObjName);
-        let arrChildrenObj = obj["children"];
-        console.log("CHILDREN ARRAY: " + JSON.stringify(arrChildrenObj));
-        arrChildrenObj.forEach(function(childName){
-            console.log("CHILD ELEMENT: " + childName);
-            console.log("CHILD ELEMENT exists: " + hasRecord(childName));
-            if (!hasRecord(childName)) {
-                arrNewElements2.push({
-                    "name": childName,
-                    "parent": [currObjName],
-                    "related": [],
-                    "children": []
-                });
-            }
-        });
-    });
-    console.log("NEW CHILDREN" + JSON.stringify(arrNewElements2));
-    let arrNewElements3 = [];
-    RELATIONSHIPS.forEach(function(obj){
-        let currObjName = obj["name"];
-        console.log("MAIN OBJ NAME: " + currObjName);
-        let arrRelatedObj = obj["related"];
-        console.log("SIBLING ARRAY: " + JSON.stringify(arrRelatedObj));
-        arrRelatedObj.forEach(function(siblingName){
-            console.log("SIBLING ELEMENT: " + siblingName);
-            console.log("SIBLING ELEMENT exists: " + hasRecord(siblingName));
-            if (!hasRecord(siblingName)) {
-                arrNewElements3.push({
-                    "name": siblingName,
-                    "parent": [],
-                    "related": [currObjName],
-                    "children": []
-                });
-            }
-        });
-    });
-    console.log("NEW SIBLINGS" + JSON.stringify(arrNewElements3));
-    
-    // Add new elements to the RELATIONSHIP object
-    arrNewElements.forEach(function(newObj){
-        addRelationship(newObj);
-    });
-    arrNewElements2.forEach(function(newObj){
-        addRelationship(newObj);
-    });
-    arrNewElements3.forEach(function(newObj){
-        addRelationship(newObj);
-    });
-    console.log(JSON.stringify(RELATIONSHIPS));
-    RELATIONSHIPS.forEach(function(dbRecord){
-        let currObjName = dbRecord["name"];
-        // console.log("CURR OBJ: " + currObjName);
-        let currSiblingArray = dbRecord["related"];
-        // console.log("CURR SIBLINGS: " + JSON.stringify(currSiblingArray));
-    });
-    
-    // Link siblings
-    let arrSiblingObjectCollection = [];
-    console.log(JSON.stringify(RELATIONSHIPS));
-    RELATIONSHIPS.forEach(function(dbRecord){
-        let arrSiblingObjects = [];
-        let currObjName = dbRecord["name"];
-        console.log("CURR OBJ: " + currObjName);
-        let currSiblingArray = dbRecord["related"];
-        console.log("CURR SIBLINGS: " + JSON.stringify(currSiblingArray));
-        arrSiblingObjects = mergeArrays(arrSiblingObjects, currSiblingArray);
-        if (arrSiblingObjects.length > 1) {
-            arrSiblingObjectCollection.push(arrSiblingObjects);
-        }
-        console.log(JSON.stringify(arrSiblingObjectCollection));
-    });
-    arrSiblingObjectCollection.forEach(function(siblingObjArr){
-        console.log(JSON.stringify(siblingObjArr));
-        siblingObjArr.forEach(function(siblingName){
-            let updateRequestPayload = {
-                "name": siblingName,
-                "parent": [],
-                "related": siblingObjArr,
-                "children": []
-            };
-            addRelationship(updateRequestPayload);
-        })
-    });
-    
-    // Remove own name from Related Array (Sibling)
-    RELATIONSHIPS.forEach(function(dbRecord){
-        let arrSiblingObjects = [];
-        let currObjName = dbRecord["name"];
-        console.log("CURR OBJ: " + currObjName);
-        let currSiblingArray = dbRecord["related"];
-        let correctSiblingArray = currSiblingArray.filter(e => e !== dbRecord["name"]);
-        dbRecord["related"] = correctSiblingArray;
-    });
-    // alert("PROPER SIBLING LINKAGES: " + JSON.stringify(RELATIONSHIPS["all"]));
+    alert(REQUEST_OBJECT);
 }
 
 </script>
@@ -358,8 +238,6 @@ finalAddRelationship = function(REQUEST_OBJECT) {
 <br>
 <br>
 <div style="text-align:center">
-   <button id="randomButton" onclick="openStuff();">Generate Request [JSON]</button><br><br>
-   <button id="randomButton" onclick="processDataJson();">Process data.json</button><br><br>
    <button id="randomButton" onclick="roll();">Roll the Dice</button><br><br>
    <button><img src="https://c.statcounter.com/12792249/0/85f97432/0/" alt="Web Analytics"  referrerPolicy="no-referrer-when-downgrade"> Visits(20220904)</button>
 </div>
