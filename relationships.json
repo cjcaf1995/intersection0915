@@ -1,3 +1,18 @@
 {
-  "all": []
+  "all": [
+    {
+      "name": "intersection/issues/1",
+      "parent": [
+        "intersection/issues/1-parent"
+      ],
+      "related": [
+        "intersection/issues/1-sib1",
+        "intersection/issues/1-sib2"
+      ],
+      "children": [
+        "intersection/issues/1-child1",
+        "intersection/issues/1-child2"
+      ]
+    }
+  ]
 }
