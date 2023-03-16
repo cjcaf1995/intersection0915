@@ -13,7 +13,7 @@ const GITHUB_ACCOUNT_PREFIX = "https://github.com/cjcaf1995/";
 
 window.onload = function() {
     const GITHUB_ACCOUNT = "cjcaf1995";
-    const ENV = "tumblr";
+    const ENV = "prod";
     const schemaUrl = ENV === "prod" ? "schema.json" : "https://raw.githubusercontent.com/" + GITHUB_ACCOUNT + "/intersection0915/main/schema.json";
     const relationshipUrl = ENV === "prod" ? "relationships.json" : "https://raw.githubusercontent.com/" + GITHUB_ACCOUNT + "/intersection0915/main/relationships.json";
     const requestsUrl = ENV === "prod" ? "data.json" : "https://raw.githubusercontent.com/" + GITHUB_ACCOUNT + "/intersection0915/main/data.json";
