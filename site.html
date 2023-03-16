@@ -5,8 +5,16 @@
 <script>
 
 window.onload = function() {
-    document.getElementById('randomButton').click();
-}
+    // document.getElementById('randomButton').click();
+    $(function() {
+    var people = [];
+        $.getJSON('schema.json', function(data) {
+            $.each(data.schema, function(i, f) {
+                alert(JSON.stringify(f));
+            });
+        });
+     });
+    }
 
 function randomIntFromInterval(min, max) {
     const randomNumber = Math.random();
