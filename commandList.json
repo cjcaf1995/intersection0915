@@ -1136,6 +1136,60 @@
     },
     {
       "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/66,P,https://github.com/cjcaf1995/intersection/issues/26"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/chatgpt/issues/1,P,https://github.com/cjcaf1995/intersection/issues/45"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/chatgpt/issues/4,P,https://github.com/cjcaf1995/chatgpt/issues/2"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/chatgpt/issues/5,P,https://github.com/cjcaf1995/chatgpt/issues/2"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/chatgpt/issues/6,P,https://github.com/cjcaf1995/chatgpt/issues/2"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/chatgpt/issues/7,P,https://github.com/cjcaf1995/chatgpt/issues/2"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/chatgpt/issues/8,P,https://github.com/cjcaf1995/chatgpt/issues/2"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/chatgpt/issues/9,P,https://github.com/cjcaf1995/chatgpt/issues/2"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/71,P,https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/65"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/71,R,https://github.com/cjcaf1995/intersection/issues/25"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/71,R,https://github.com/cjcaf1995/intersection/issues/26"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/44,C,https://github.com/cjcaf1995/java-casual/issues/37"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/44,C,https://github.com/cjcaf1995/java-casual/issues/38"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/44,C,https://github.com/cjcaf1995/java-casual/issues/39"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/45,C,https://github.com/cjcaf1995/chatgpt/issues/2"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/40,P,https://github.com/cjcaf1995/intersection/issues/26"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/random/issues/1,P,https://github.com/cjcaf1995/intersection/issues/46"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/random/issues/2,P,https://github.com/cjcaf1995/intersection/issues/47"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/random/issues/3,P,https://github.com/cjcaf1995/intersection/issues/48"
     }
   ]
 }
