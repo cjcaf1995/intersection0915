@@ -3,7 +3,7 @@
 <body style="background-color:#1A2735">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: 20230317-2129 (CTR: 1163) </h3>
+    <h3>Build Version: 20230317-2135 (CTR: 1163) </h3>
 </head>
 <script>
 
@@ -36,9 +36,9 @@ roll = function () {
     
     csvCommandListDedup.forEach(function(command){
 
-        let currOrigin = shortenUrl(command.split(",")[0]);
+        let currOrigin = command.split(",")[0];
         let currRel = command.split(",")[1];
-        let currTarget = shortenUrl(command.split(",")[2]);
+        let currTarget = command.split(",")[2];
         
         let currOrigin_v2 = currTarget;
         let currRel_v2;
@@ -65,9 +65,9 @@ roll = function () {
     });
     
     CSV_COMMAND_LIST_COMPLETE.forEach(function(command){
-        let currOrigin = shortenUrl(command.split(",")[0]);
+        let currOrigin = command.split(",")[0];
         let currRel = command.split(",")[1];
-        let currTarget = shortenUrl(command.split(",")[2]);
+        let currTarget = command.split(",")[2];
         
         if (currRel === 'P') {
             if (hasRecord(currOrigin)) {
@@ -160,10 +160,6 @@ window.onload = function() {
             }
         });
     document.getElementById('randomButton').click();
-}
-
-function shortenUrl(githubUrl) {
-    return githubUrl.replaceAll(GITHUB_ACCOUNT_PREFIX, "");
 }
 
 processDataJson = function () {
