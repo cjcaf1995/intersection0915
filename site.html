@@ -45,8 +45,8 @@ roll = function () {
         let currTarget_v2 = currOrigin;
         if (currRel === 'P') {
             currRel_v2 = 'C';   
-        } else if (currRel === 'S') {
-            currRel_v2 = 'S';    
+        } else if (currRel === 'R') {
+            currRel_v2 = 'R';    
         } else if (currRel === 'C') {
             currRel_v2 = 'P';   
         }
@@ -97,7 +97,7 @@ roll = function () {
             }
         }
         
-        if (currRel === 'S') {
+        if (currRel === 'R') {
             if (hasRecord(currOrigin)) {
                 let existingThis = getRecord(currOrigin);
                 existingThis["related"] = mergeArrays(existingThis["related"], [currTarget]);
