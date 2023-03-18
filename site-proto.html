@@ -3,7 +3,7 @@
 <body style="background-color:#1A2735">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: 20230318-2003 (CTR: 1413) </h3>
+    <h3>Build Version: 20230318-2010 (CTR: 1413) </h3>
 </head>
 <script>
 
@@ -189,6 +189,8 @@ withScoreEight = function () {
 }
 	
 withScore = function (score) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
     const originThis = "https://github.com/cjcaf1995/" + urlParams.get('this');
     processDataJson(originThis, score);
 }	
