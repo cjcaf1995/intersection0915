@@ -1190,6 +1190,63 @@
     },
     {
       "command": "https://github.com/cjcaf1995/random/issues/3,P,https://github.com/cjcaf1995/intersection/issues/48"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/34,P,https://github.com/cjcaf1995/intersection/issues/3"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/16,P,https://github.com/cjcaf1995/intersection/issues/11"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/78,P,https://github.com/cjcaf1995/intersection/issues/27"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/78,C,https://github.com/cjcaf1995/codebank/issues/72"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/34,P,https://github.com/cjcaf1995/intersection/issues/27"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/34,C,https://github.com/cjcaf1995/codebank/issues/67"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/72,P,https://github.com/cjcaf1995/intersection/issues/27"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/72,P,https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/78"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/67,P,https://github.com/cjcaf1995/intersection/issues/27"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/66,P,https://github.com/cjcaf1995/intersection/issues/25"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/66,P,https://github.com/cjcaf1995/intersection/issues/26"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/66,P,https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/64"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/61,P,https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/19"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/61,P,https://github.com/cjcaf1995/intersection/issues/10"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/57,P,https://github.com/cjcaf1995/intersection/issues/11"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/47,P,https://github.com/cjcaf1995/linux-casual/issues/1"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/49,C,https://github.com/cjcaf1995/linux-casual/issues/1"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/8,P,https://github.com/cjcaf1995/intersection/issues/37"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/8,P,https://github.com/cjcaf1995/docker-casual/issues/7"
     }
   ]
 }
