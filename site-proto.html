@@ -3,7 +3,7 @@
 <body style="background-color:#1A2735">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: 20230318-21:00 (CTR: 1413) </h3>
+    <h3>Build Version: 20230318-21:04 (CTR: 1413) </h3>
 </head>
 <script>
 
@@ -34,7 +34,7 @@ calculate = function () {
     const SCORED_ITEMS = [];
     SESSION_SCORES.forEach(function(record){
 	    let timeBasedScore = 0.5 * (new Date() - record["lastAccess"]);
-	    let comprehensionScore = -1 * (0.5 * comp);
+	    let comprehensionScore = -1 * (0.5 * record["comp]);
 	    let aggregateScore = timeBasedScore + comprehensionScore;
 	    record["aggregateScore"] = aggregateScore;
 	    if (SCORED_ITEMS.length === 0) {
