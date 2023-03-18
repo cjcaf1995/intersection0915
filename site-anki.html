@@ -3,7 +3,7 @@
 <body style="background-color:#1A2735">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: v1.2.0-20230318-23:37 (CTR: 1464) </h3>
+    <h3>Build Version: v1.2.0-20230318-23:40 (CTR: 1464) </h3>
 </head>
 <script>
 
@@ -69,10 +69,12 @@ calculate = function () {
     });
 	
     alert("DEDUP_SCORED_ITEMS: " + JSON.stringify(DEDUP_SCORED_ITEMS));
+    alert("DEDUP_SCORED_ITEM (count): " + DEDUP_SCORED_ITEMS.length);
 	
     // DOWNLOAD
     if (SCORED_ITEMS.length > 0) {
 	alert("SCORED_ITEMS: " + JSON.stringify(SCORED_ITEMS));
+        alert("SCORED_ITEM (count): " + SCORED_ITEMS.length);
         downloadAnkiCsv(SCORED_ITEMS);
     }
 }
