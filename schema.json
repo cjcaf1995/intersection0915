@@ -35,6 +35,10 @@
     {
       "full": "java-casual",
       "short": "a8"
+    },
+    {
+      "full": "linux-casual",
+      "short": "a9"
     }
   ]
 }
