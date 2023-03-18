@@ -158,7 +158,7 @@ processDataJson = function (thisOrigin, score) {
     let reviewObj = {
 	"issueId": thisOrigin, "lastAccess": new Date(), "comp": score
     };
-    let jsonContent = "data:text/json;charset=utf-8," + JSON.stringify(reviewObj);
+    let jsonContent = "data:text/json;charset=utf-8," + JSON.stringify(reviewObj) + "\n";
     var encodedUri = encodeURI(jsonContent);
     var link = document.createElement("a");
     link.setAttribute("href", encodedUri);
