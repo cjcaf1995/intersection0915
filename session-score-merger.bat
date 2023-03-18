@@ -1,0 +1,1 @@
+type *.json > session-scores.txt
