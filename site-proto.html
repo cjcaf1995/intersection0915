@@ -156,7 +156,7 @@ window.onload = function() {
 
 processDataJson = function (thisOrigin, score) {
     let reviewObj = {
-	"lastAccess": new Date(), "comp": score
+	"issueId": thisOrigin, "lastAccess": new Date(), "comp": score
     };
     let jsonContent = "data:text/json;charset=utf-8," + JSON.stringify(reviewObj);
     var encodedUri = encodeURI(jsonContent);
