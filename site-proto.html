@@ -43,14 +43,14 @@ roll = function () {
             currRel_v2 = 'P';   
         }
         
-		// CREATE MAIN ENTRIES
+	// CREATE MAIN ENTRIES
         let originalEntry = [currOrigin, currRel, currTarget].join(",");
         let mirrorEntry = [currOrigin_v2, currRel_v2, currTarget_v2].join(",");
         if (!CSV_COMMAND_LIST_COMPLETE.includes(originalEntry)) {
             CSV_COMMAND_LIST_COMPLETE.push(originalEntry);
         }
 		
-		// CREATE MIRROR ENTRIES
+	// CREATE MIRROR ENTRIES
         if (!CSV_COMMAND_LIST_COMPLETE.includes(mirrorEntry)) {
             CSV_COMMAND_LIST_COMPLETE.push(mirrorEntry);
         }
@@ -169,26 +169,27 @@ processDataJson = function (thisOrigin, score) {
 }
 	
 withScoreOne = function () {
-    withScore(originThis, 1);
+    withScore(1);
 }
 	
 withScoreTwo = function () {
-    withScore(originThis, 2);
+    withScore(2);
 }
 	
 withScoreThree = function () {
-    withScore(originThis, 3);
+    withScore(3);
 }
 	
 withScoreFour = function () {
-    withScore(originThis, 4);
+    withScore(4);
 }
 	
 withScoreEight = function () {
-    withScore(originThis, 8);
+    withScore(8);
 }
 	
-withScore = function (originThis, score) {
+withScore = function (score) {
+    const originThis = "https://github.com/cjcaf1995/" + urlParams.get('this');
     processDataJson(originThis, score);
 }	
 
