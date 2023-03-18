@@ -1,54 +1,199 @@
 {
   "scores": [
     {
-      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/74",
-      "lastAccess": "2023-03-11T11:34:29.461Z",
-      "comp": 6
+      "issueId": "https://github.com/cjcaf1995/codebank/issues/76",
+      "lastAccess": "2023-03-18T13:41:32.614Z",
+      "comp": 2
     },
     {
-      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/79",
-      "lastAccess": "2023-03-11T11:34:29.461Z",
-      "comp": 7
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/37",
+      "lastAccess": "2023-03-18T13:34:18.055Z",
+      "comp": 2
     },
     {
-      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/78",
-      "lastAccess": "2023-03-11T11:34:29.461Z",
-      "comp": 8
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/23",
+      "lastAccess": "2023-03-18T13:51:47.911Z",
+      "comp": 1
     },
     {
-      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/72",
-      "lastAccess": "2023-03-18T11:34:29.461Z",
-      "comp": 10
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/18",
+      "lastAccess": "2023-03-18T14:10:31.240Z",
+      "comp": 3
     },
     {
-      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/73",
-      "lastAccess": "2023-03-18T11:34:29.461Z",
-      "comp": 11
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/45",
+      "lastAccess": "2023-03-18T13:45:13.773Z",
+      "comp": 3
     },
     {
-      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/75",
-      "lastAccess": "2023-03-18T11:34:29.461Z",
-      "comp": 10
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/24",
+      "lastAccess": "2023-03-18T13:49:59.288Z",
+      "comp": 1
     },
     {
-      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/77",
-      "lastAccess": "2023-03-11T11:34:29.461Z",
-      "comp": 7
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/19",
+      "lastAccess": "2023-03-18T13:45:57.745Z",
+      "comp": 2
     },
     {
-      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/80",
-      "lastAccess": "2023-03-18T11:34:29.461Z",
-      "comp": 9
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/24",
+      "lastAccess": "2023-03-18T14:10:51.202Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/aws-book-1/issues/16",
+      "lastAccess": "2023-03-18T13:43:34.505Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/38",
+      "lastAccess": "2023-03-18T13:33:31.615Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/18",
+      "lastAccess": "2023-03-18T13:48:54.219Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/21",
+      "lastAccess": "2023-03-18T13:59:55.296Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/12",
+      "lastAccess": "2023-03-18T13:33:12.602Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/codebank/issues/56",
+      "lastAccess": "2023-03-18T13:45:06.724Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/12",
+      "lastAccess": "2023-03-18T13:30:42.371Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995//issues/19",
+      "lastAccess": "2023-03-18T14:03:23.810Z",
+      "comp": 1
     },
     {
       "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/76",
-      "lastAccess": "2023-03-18T11:34:29.461Z",
-      "comp": 10
+      "lastAccess": "2023-03-18T13:40:50.373Z",
+      "comp": 4
     },
     {
-      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/71",
-      "lastAccess": "2023-03-11T11:34:29.461Z",
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/31",
+      "lastAccess": "2023-03-18T13:42:19.579Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/30",
+      "lastAccess": "2023-03-18T13:41:18.160Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/21",
+      "lastAccess": "2023-03-18T13:48:12.082Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/24",
+      "lastAccess": "2023-03-18T14:09:55.172Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/10",
+      "lastAccess": "2023-03-18T13:28:50.183Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/25",
+      "lastAccess": "2023-03-18T14:10:13.060Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/2",
+      "lastAccess": "2023-03-18T13:37:49.121Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/40",
+      "lastAccess": "2023-03-18T13:30:28.313Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/21",
+      "lastAccess": "2023-03-18T13:47:03.748Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/17",
+      "lastAccess": "2023-03-18T14:12:00.486Z",
       "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/12",
+      "lastAccess": "2023-03-18T13:28:31.135Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/16",
+      "lastAccess": "2023-03-18T13:37:13.902Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/20",
+      "lastAccess": "2023-03-18T13:40:03.840Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/21",
+      "lastAccess": "2023-03-18T13:54:16.718Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995//java-casual/issues/17",
+      "lastAccess": "2023-03-18T13:47:47.889Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/codebank/issues/56",
+      "lastAccess": "2023-03-18T13:44:48.629Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/25",
+      "lastAccess": "2023-03-18T13:58:38.849Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/10",
+      "lastAccess": "2023-03-18T14:16:28.013Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/25",
+      "lastAccess": "2023-03-18T14:04:18.047Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/codebank/issues/76",
+      "lastAccess": "2023-03-18T13:42:41.557Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/7",
+      "lastAccess": "2023-03-18T13:34:45.544Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/18",
+      "lastAccess": "2023-03-18T13:56:27.957Z",
+      "comp": 2
     }
   ]
 }
