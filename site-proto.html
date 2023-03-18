@@ -3,7 +3,7 @@
 <body style="background-color:#1A2735">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: 20230318-22:06 (CTR: 1413) </h3>
+    <h3>Build Version: 20230318-22:11 (CTR: 1413) </h3>
 </head>
 <script>
 
@@ -50,6 +50,7 @@ calculate = function () {
     });
     // DOWNLOAD
     if (SCORED_ITEMS.length > 0) {
+	alert(JSON.stringify(SCORED_ITEMS));
         downloadAnkiCsv(SCORED_ITEMS);
     }
 }
@@ -198,7 +199,7 @@ window.onload = function() {
 downloadAnkiCsv = function(sessionScores) {
     
     var issueLinks = [];
-    for (let i = 0; i < 27; i++) {
+    for (let i = 0; i < 27 && i < sessionScores.length; i++) {
 	issueLinks.push(sessionScores["issueId"]);
     }
     
