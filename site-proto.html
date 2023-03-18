@@ -3,7 +3,7 @@
 <body style="background-color:#1A2735">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: 20230318-21:23 (CTR: 1413) </h3>
+    <h3>Build Version: 20230318-21:30 (CTR: 1413) </h3>
 </head>
 <script>
 
@@ -37,18 +37,18 @@ calculate = function () {
         let comprehensionScore = -1 * (0.5 * Number(record["comp"]));
         let aggregateScore = timeBasedScore + comprehensionScore;
         record["aggregateScore"] = aggregateScore;
-        if (SCORED_ITEMS.length === 0) {
-	    SCORED_ITEMS.push(record);
-        } else {
-	    let previousRecord = SCORED_ITEMS[SCORED_ITEMS.length - 1];
-	    if (record["aggregateScore"] > previousRecord["aggregateScore"]) {
-	        SCORED_ITEMS.splice(0, 0, record);	
-	    } else {
-	        SCORED_ITEMS.push(record);
-	    }
-        }
+	SCORED_ITEMS.push(record);
     });
-    alert("Scored Items: " + JSON.stringify(SCORED_ITEMS));
+    SCORED_ITEMS.sort(function(a, b) {
+        if (a.aggregateScore < b.aggregateScore){
+            return -1;
+        }
+        if (a.aggregateScore > b.aggregateScore){
+            return 1;
+        }
+        return 0;
+    });
+    alert("Scored and Sorted Items: " + JSON.stringify(SCORED_ITEMS));
 }
 	
 roll = function () {
