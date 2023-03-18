@@ -3,7 +3,7 @@
 <body style="background-color:#1A2735">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: 20230318-2023 (CTR: 1413) </h3>
+    <h3>Build Version: 20230318-2042 (CTR: 1413) </h3>
 </head>
 <script>
 
@@ -11,7 +11,26 @@ const REQUESTS_JSON = [];
 const MASTER_SCHEMA = [];
 const RELATIONSHIPS = [];
 const CSV_COMMAND_LIST = [];
+const SESSION_SCORES = [];
 const GITHUB_ACCOUNT_PREFIX = "https://github.com/cjcaf1995/";
+
+calculate = function () {
+    const GITHUB_RAW_PREFIX = "https://raw.githubusercontent.com/";
+    const GITHUB_ACCOUNT = "cjcaf1995";
+    const GITHUB_REPO = "intersection0915";
+    const GITHUB_COMPLETE_PREFIX = GITHUB_RAW_PREFIX + GITHUB_ACCOUNT + "/" + GITHUB_REPO;
+    const isProd = true;
+    const schemaUrl = isProd ? "schema.json" : GITHUB_COMPLETE_PREFIX + "/main/scores/sessionScores.json";
+    fetch(schemaUrl)
+        .then(response => response.json())
+        .then(data => {
+            for (var i = 0; i < data.scores.length; i++){
+                let currScoreEntry = data.scores[i];
+                SESSION_SCORES.push(currScoreEntry);
+            }
+        });
+    alert("SESSION_SCORES: " + JSON.stringify(SESSION_SCORES));
+}
 	
 roll = function () {
 
@@ -244,6 +263,7 @@ function getRecord(name) {
    <button id="withScoreThree" onclick="withScoreThree();" class="btn btn-success btn-lg">Review Score: 3</button><br><br>
    <button id="withScoreFour" onclick="withScoreFour();" class="btn btn-success btn-lg">Review Score: 4</button><br><br>
    <button id="withScoreFive" onclick="withScoreEight();" class="btn btn-success btn-lg">Review Score: 8</button><br><br>
+   <button id="calculate" onclick="calculate();" class="btn btn-success btn-lg">Calculate</button><br><br>
    <button class="btn btn-success btn-lg"><img src="https://c.statcounter.com/12792249/0/85f97432/0/" alt="Web Analytics"  referrerPolicy="no-referrer-when-downgrade"> Visits(20220904)</button>
 </div>
 
