@@ -197,6 +197,9 @@ downloadAnkiCsv = function(sessionScores) {
     
     var issueLinks = [];
     sessionScores.forEach(function(record){
+	if (issueLinks.length === 27) {
+	   break;
+	}
         issueLinks.push(record["issueId"]);
     });
     
@@ -207,7 +210,6 @@ downloadAnkiCsv = function(sessionScores) {
             var theHref = "<a href=" + theLink + ">Randomizer</a>";
             metadata.push(theHref + ",");
         }
-        var theIssueId = repository + "-" + issueLinks[i];
         var theHref = "<a href=" + theLink + ">" + theLink + "</a>";
         metadata.push(theHref + ",");
     }
