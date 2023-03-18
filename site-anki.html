@@ -3,7 +3,7 @@
 <body style="background-color:#1A2735">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: v1.2.0-20230318-23:30 (CTR: 1464) </h3>
+    <h3>Build Version: v1.2.0-20230318-23:37 (CTR: 1464) </h3>
 </head>
 <script>
 
@@ -50,13 +50,17 @@ calculate = function () {
     });
 	
     // COMBINE DUPLICATE OBJECTS
+    const DEDUP_SCORED_ITEM_NAMES = [];
     const DEDUP_SCORED_ITEMS = [];
     SCORED_ITEMS.forEach(function(scoredItem){
-        if (DEDUP_SCORED_ITEMS[scoredItem["issueId"]] === undefined) {
-	    DEDUP_SCORED_ITEMS[scoredItem["issueId"]] = scoredItem;
+        if (!DEDUP_SCORED_ITEM_NAMES.includes(scoredItem["issueId"])) {
+	    DEDUP_SCORED_ITEM_NAMES.push(scoredItem["issueId"]);
+	    DEDUP_SCORED_ITEMS.push(scoredItem);
 	} else {
-	    let existingItem = DEDUP_SCORED_ITEMS[scoredItem["issueId"]];
 	    let newItem = scoredItem;
+	    let existingItem = DEDUP_SCORED_ITEMS.find(dedupScoredItem => {
+	        return dedupScoredItem.issueId === newItem["issueId"];
+	    });
 	    if (Date.parse(newItem["lastAccess"]) > Date.parse(existingItem["lastAccess"])) {
 		existingItem["lastAccess"] = newItem["lastAccess"];
 	    }
