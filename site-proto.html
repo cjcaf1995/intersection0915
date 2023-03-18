@@ -3,7 +3,7 @@
 <body style="background-color:#1A2735">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: 20230318-21:38 (CTR: 1413) </h3>
+    <h3>Build Version: 20230318-21:53 (CTR: 1413) </h3>
 </head>
 <script>
 
@@ -48,7 +48,8 @@ calculate = function () {
         }
         return 0;
     });
-    alert("Scored and Sorted Items: " + JSON.stringify(SCORED_ITEMS));
+    // DOWNLOAD
+    downloadAnkiCsv(SCORED_ITEMS);
 }
 	
 roll = function () {
@@ -191,6 +192,36 @@ window.onload = function() {
         });
     document.getElementById('randomButton').click();
 }
+	
+downloadAnkiCsv = function(sessionScores) {
+    
+    var issueLinks = [];
+    sessionScores.forEach(function(record){
+        issueLinks.push(record["issueId"]);
+    });
+    
+    var metadata = [];
+    for (let i = 0; i < issueLinks.length; i++) {
+        if ((i !== 0) && (i % 3 === 0)) {
+            var theLink = "https://github.com/cjcaf1995/appendix/issues/56";            
+            var theHref = "<a href=" + theLink + ">Randomizer</a>";
+            metadata.push(theHref + ",");
+        }
+        var theIssueId = repository + "-" + issueLinks[i];
+        var theHref = "<a href=" + theLink + ">" + theLink + "</a>";
+        metadata.push(theHref + ",");
+    }
+    
+    let newLine = "\n";
+    let csvContent = "data:text/csv;charset=utf-8," + metadata.join(newLine);
+    var encodedUri = encodeURI(csvContent);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    const currDate = new Date().toISOString().split('T')[0];
+    link.setAttribute("download", "session_" + currDate + "_" + (Math.random() * 100) +  ".csv");
+    document.body.appendChild(link); // Required for FF
+    link.click(); // This will download the CSV
+};
 
 processDataJson = function (thisOrigin, score) {
     let reviewObj = {
