@@ -29,7 +29,7 @@ calculate = function () {
                 SESSION_SCORES.push(currScoreEntry);
             }
         });
-	
+	 
     // Sort by largest to smallest
     const SCORED_ITEMS = [];
     SESSION_SCORES.forEach(function(record){
@@ -48,6 +48,24 @@ calculate = function () {
         }
         return 0;
     });
+	
+    // COMBINE DUPLICATE OBJECTS
+    const DEDUP_SCORED_ITEMS = [];
+    SCORED_ITEMS.forEach(function(scoredItem){
+        if (DEDUP_SCORED_ITEMS[scoredItem["issueId"]] === undefined) {
+	    DEDUP_SCORED_ITEMS[scoredItem["issueId"]] = scoredItem;
+	} else {
+	    let existingItem = DEDUP_SCORED_ITEMS[scoredItem["issueId"]];
+	    let newItem = scoredItem;
+	    if (Date.parse(newItem["lastAccess"]) > Date.parse(existingItem["lastAccess"])) {
+		existingItem["lastAccess"] = newItem["lastAccess"];
+		existingItem["lastAccess"] = Number(existingItem["comp"]) + Number(newItem["comp"]);
+	    }
+	}
+    });
+	
+    alert(JSON.stringify(DEDUP_SCORED_ITEMS));
+	
     // DOWNLOAD
     if (SCORED_ITEMS.length > 0) {
 	alert(JSON.stringify(SCORED_ITEMS));
