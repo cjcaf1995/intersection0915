@@ -3,7 +3,7 @@
 <body style="background-color:#1A2735">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: v1.2.0-20230318-23:25 (CTR: 1464) </h3>
+    <h3>Build Version: v1.2.0-20230318-23:30 (CTR: 1464) </h3>
 </head>
 <script>
 
@@ -59,16 +59,16 @@ calculate = function () {
 	    let newItem = scoredItem;
 	    if (Date.parse(newItem["lastAccess"]) > Date.parse(existingItem["lastAccess"])) {
 		existingItem["lastAccess"] = newItem["lastAccess"];
-		existingItem["lastAccess"] = Number(existingItem["comp"]) + Number(newItem["comp"]);
 	    }
+	    existingItem["comp"] = Number(existingItem["comp"]) + Number(newItem["comp"]);
 	}
     });
 	
-    alert(JSON.stringify(DEDUP_SCORED_ITEMS));
+    alert("DEDUP_SCORED_ITEMS: " + JSON.stringify(DEDUP_SCORED_ITEMS));
 	
     // DOWNLOAD
     if (SCORED_ITEMS.length > 0) {
-	alert(JSON.stringify(SCORED_ITEMS));
+	alert("SCORED_ITEMS: " + JSON.stringify(SCORED_ITEMS));
         downloadAnkiCsv(SCORED_ITEMS);
     }
 }
