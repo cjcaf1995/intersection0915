@@ -3,7 +3,7 @@
 <body style="background-color:#1A2735">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <h3>Build Version: 20230318-22:01 (CTR: 1413) </h3>
+    <h3>Build Version: 20230318-22:03 (CTR: 1413) </h3>
 </head>
 <script>
 
@@ -199,7 +199,7 @@ downloadAnkiCsv = function(sessionScores) {
     
     var issueLinks = [];
     for (let i = 0; i < 27; i++) {
-	issueLinks.push(record["issueId"]);
+	issueLinks.push(sessionScores["issueId"]);
     }
     
     var metadata = [];
