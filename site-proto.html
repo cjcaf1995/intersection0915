@@ -33,10 +33,20 @@ calculate = function () {
     // Sort by largest to smallest
     const SCORED_ITEMS = [];
     SESSION_SCORES.forEach(function(record){
-	alert(record["issueId"]);
-	alert(record["lastAccess"]);
-	alert(record["comp"]);
-	alert(typeof(record["lastAccess"]));
+        let timeBasedScore = 0.5 * (new Date() - Date.parse(record["lastAccess"]));
+        let comprehensionScore = -1 * (0.5 * Number(record["comp"]));
+        let aggregateScore = timeBasedScore + comprehensionScore;
+        record["aggregateScore"] = aggregateScore;
+        if (SCORED_ITEMS.length === 0) {
+	    SCORED_ITEMS.push(record);
+        } else {
+	    let previousRecord = SCORED_ITEMS[SCORED_ITEMS.length - 1];
+	    if (record["aggregateScore"] > previousRecord["aggregateScore"]) {
+	        SCORED_ITEMS.splice(0, 0, record);	
+	    } else {
+	        SCORED_ITEMS.push(record);
+	    }
+        }
     });
     alert("Scored Items: " + JSON.stringify(SCORED_ITEMS));
 }
