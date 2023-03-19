@@ -434,6 +434,161 @@
       "issueId": "https://github.com/cjcaf1995/codebank/issues/56",
       "lastAccess": "2023-03-19T02:23:47.148Z",
       "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/69",
+      "lastAccess": "2023-03-19T05:28:47.608Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/83",
+      "lastAccess": "2023-03-19T05:25:08.396Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/86",
+      "lastAccess": "2023-03-19T05:25:57.890Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/67",
+      "lastAccess": "2023-03-19T05:28:27.226Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/89",
+      "lastAccess": "2023-03-19T05:30:50.075Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/77",
+      "lastAccess": "2023-03-19T05:30:02.214Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/89",
+      "lastAccess": "2023-03-19T05:26:39.545Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/70",
+      "lastAccess": "2023-03-19T05:28:55.428Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/72",
+      "lastAccess": "2023-03-19T05:29:08.831Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/73",
+      "lastAccess": "2023-03-19T05:29:24.863Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/71",
+      "lastAccess": "2023-03-19T05:29:02.452Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/91",
+      "lastAccess": "2023-03-19T05:27:06.756Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/68",
+      "lastAccess": "2023-03-19T05:28:35.818Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/88",
+      "lastAccess": "2023-03-19T05:26:28.156Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/92",
+      "lastAccess": "2023-03-19T05:27:14.538Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/76",
+      "lastAccess": "2023-03-19T05:29:53.503Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/85",
+      "lastAccess": "2023-03-19T05:25:40.980Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/66",
+      "lastAccess": "2023-03-19T05:28:14.782Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/80",
+      "lastAccess": "2023-03-19T05:30:24.156Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/63",
+      "lastAccess": "2023-03-19T05:27:37.847Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/75",
+      "lastAccess": "2023-03-19T05:29:44.850Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/78",
+      "lastAccess": "2023-03-19T05:30:09.444Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/81",
+      "lastAccess": "2023-03-19T05:30:30.968Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/90",
+      "lastAccess": "2023-03-19T05:26:55.541Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/64",
+      "lastAccess": "2023-03-19T05:27:49.724Z",
+      "comp": 2
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/65",
+      "lastAccess": "2023-03-19T05:28:04.026Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/79",
+      "lastAccess": "2023-03-19T05:30:16.880Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/87",
+      "lastAccess": "2023-03-19T05:26:13.461Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/74",
+      "lastAccess": "2023-03-19T05:29:37.526Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/82",
+      "lastAccess": "2023-03-19T05:24:44.210Z",
+      "comp": 1
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/84",
+      "lastAccess": "2023-03-19T05:25:25.748Z",
+      "comp": 1
     }
   ]
 }
