@@ -1490,6 +1490,267 @@
     },
     {
       "command": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/38,R,https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/60"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/21,P,https://github.com/cjcaf1995/intersection/issues/2"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/58,P,https://github.com/cjcaf1995/intersection/issues/30"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/31,P,https://github.com/cjcaf1995/intersection/issues/32"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/31,C,https://github.com/cjcaf1995/codebank/issues/76"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/28,C,https://github.com/cjcaf1995/codebank/issues/117"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/26,P,https://github.com/cjcaf1995/intersection/issues/24"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/26,C,https://github.com/cjcaf1995/codebank/issues/75"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/19,C,https://github.com/cjcaf1995/intersection/issues/73"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/1,P,https://github.com/cjcaf1995/intersection/issues/30"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/codebank/issues/73,P,https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/19"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/23,C,https://github.com/cjcaf1995/intersection/issues/29"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/23,C,https://github.com/cjcaf1995/intersection/issues/31"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/23,C,https://github.com/cjcaf1995/intersection/issues/37"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/23,C,https://github.com/cjcaf1995/intersection/issues/39"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/23,C,https://github.com/cjcaf1995/codebank/issues/81"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/21,P,https://github.com/cjcaf1995/docker-casual/issues/17"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/21,P,https://github.com/cjcaf1995/intersection/issues/37"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/16,P,https://github.com/cjcaf1995/intersection/issues/37"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/16,P,https://github.com/cjcaf1995/intersection/issues/33"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/16,P,https://github.com/cjcaf1995/intersection/issues/39"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/12,P,https://github.com/cjcaf1995/docker-casual/issues/11"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/11,P,https://github.com/cjcaf1995/intersection/issues/37"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/11,P,https://github.com/cjcaf1995/intersection/issues/39"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/11,R,https://github.com/cjcaf1995/docker-casual/issues/7"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/11,C,https://github.com/cjcaf1995/docker-casual/issues/8"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/11,C,https://github.com/cjcaf1995/docker-casual/issues/9"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/11,C,https://github.com/cjcaf1995/docker-casual/issues/10"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/11,C,https://github.com/cjcaf1995/docker-casual/issues/12"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/10,P,https://github.com/cjcaf1995/docker-casual/issues/7"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/10,P,https://github.com/cjcaf1995/intersection/issues/37"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/25,P,https://github.com/cjcaf1995/java-casual/issues/17"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/25,R,https://github.com/cjcaf1995/java-casual/issues/18"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/25,R,https://github.com/cjcaf1995/java-casual/issues/19"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/25,R,https://github.com/cjcaf1995/java-casual/issues/20"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/25,R,https://github.com/cjcaf1995/java-casual/issues/21"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/25,R,https://github.com/cjcaf1995/java-casual/issues/22"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/25,R,https://github.com/cjcaf1995/java-casual/issues/23"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/25,R,https://github.com/cjcaf1995/java-casual/issues/24"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/24,P,https://github.com/cjcaf1995/java-casual/issues/17"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/24,R,https://github.com/cjcaf1995/java-casual/issues/18"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/24,R,https://github.com/cjcaf1995/java-casual/issues/19"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/24,R,https://github.com/cjcaf1995/java-casual/issues/20"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/24,R,https://github.com/cjcaf1995/java-casual/issues/21"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/24,R,https://github.com/cjcaf1995/java-casual/issues/22"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/24,R,https://github.com/cjcaf1995/java-casual/issues/23"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/24,R,https://github.com/cjcaf1995/java-casual/issues/25"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/23,P,https://github.com/cjcaf1995/java-casual/issues/17"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/23,R,https://github.com/cjcaf1995/java-casual/issues/18"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/23,R,https://github.com/cjcaf1995/java-casual/issues/19"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/23,R,https://github.com/cjcaf1995/java-casual/issues/20"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/23,R,https://github.com/cjcaf1995/java-casual/issues/21"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/23,R,https://github.com/cjcaf1995/java-casual/issues/22"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/23,R,https://github.com/cjcaf1995/java-casual/issues/24"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/23,R,https://github.com/cjcaf1995/java-casual/issues/25"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/21,P,https://github.com/cjcaf1995/java-casual/issues/17"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/21,R,https://github.com/cjcaf1995/java-casual/issues/18"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/21,R,https://github.com/cjcaf1995/java-casual/issues/19"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/21,R,https://github.com/cjcaf1995/java-casual/issues/20"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/21,R,https://github.com/cjcaf1995/java-casual/issues/22"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/21,R,https://github.com/cjcaf1995/java-casual/issues/23"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/21,R,https://github.com/cjcaf1995/java-casual/issues/24"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/21,R,https://github.com/cjcaf1995/java-casual/issues/25"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/19,P,https://github.com/cjcaf1995/java-casual/issues/17"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/19,R,https://github.com/cjcaf1995/java-casual/issues/18"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/19,R,https://github.com/cjcaf1995/java-casual/issues/20"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/19,R,https://github.com/cjcaf1995/java-casual/issues/21"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/19,R,https://github.com/cjcaf1995/java-casual/issues/22"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/19,R,https://github.com/cjcaf1995/java-casual/issues/23"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/19,R,https://github.com/cjcaf1995/java-casual/issues/24"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/19,R,https://github.com/cjcaf1995/java-casual/issues/25"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/18,P,https://github.com/cjcaf1995/java-casual/issues/17"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/18,R,https://github.com/cjcaf1995/java-casual/issues/19"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/18,R,https://github.com/cjcaf1995/java-casual/issues/20"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/18,R,https://github.com/cjcaf1995/java-casual/issues/21"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/18,R,https://github.com/cjcaf1995/java-casual/issues/22"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/18,R,https://github.com/cjcaf1995/java-casual/issues/23"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/18,R,https://github.com/cjcaf1995/java-casual/issues/24"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/18,R,https://github.com/cjcaf1995/java-casual/issues/25"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/17,P,https://github.com/cjcaf1995/java-casual/issues/10"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/17,R,https://github.com/cjcaf1995/java-casual/issues/18"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/17,R,https://github.com/cjcaf1995/java-casual/issues/19"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/17,R,https://github.com/cjcaf1995/java-casual/issues/20"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/17,R,https://github.com/cjcaf1995/java-casual/issues/21"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/17,R,https://github.com/cjcaf1995/java-casual/issues/22"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/17,R,https://github.com/cjcaf1995/java-casual/issues/23"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/17,R,https://github.com/cjcaf1995/java-casual/issues/24"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/java-casual/issues/17,R,https://github.com/cjcaf1995/java-casual/issues/25"
     }
   ]
 }
