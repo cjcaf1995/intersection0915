@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:#1A2735">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<head>
+    <h3>Build Version: v1.2.1-20230321-13:32 (CTR: 1726) </h3>
+</head>
+<script>
+
+const REQUESTS_JSON = [];
+const MASTER_SCHEMA = [];
+const RELATIONSHIPS = [];
+const CSV_COMMAND_LIST = [];
+const SESSION_SCORES = [];
+const GITHUB_ACCOUNT_PREFIX = "https://github.com/cjcaf1995/";
+
+calculate = function () {
+    const GITHUB_RAW_PREFIX = "https://raw.githubusercontent.com/";
+    const GITHUB_ACCOUNT = "cjcaf1995";
+    const GITHUB_REPO = "intersection0915";
+    const GITHUB_COMPLETE_PREFIX = GITHUB_RAW_PREFIX + GITHUB_ACCOUNT + "/" + GITHUB_REPO;
+    const isProd = true;
+    const schemaUrl = isProd ? "scores/sessionScores.json" : GITHUB_COMPLETE_PREFIX + "/main/scores/sessionScores.json";
+    fetch(schemaUrl)
+        .then(response => response.json())
+        .then(data => {
+            for (var i = 0; i < data.scores.length; i++){
+                let currScoreEntry = data.scores[i];
+                SESSION_SCORES.push(currScoreEntry);
+            }
+        });
+	 
+    // Sort by largest to smallest
+    const SCORED_ITEMS = [];
+    SESSION_SCORES.forEach(function(record){
+        let timeBasedScore = 0.5 * ((new Date() - Date.parse(record["lastAccess"])) / (1000 * 3600 * 24));
+        let comprehensionScore = -1 * (0.5 * Number(record["comp"]));
+        let aggregateScore = timeBasedScore + comprehensionScore;
+        record["aggregateScore"] = aggregateScore;
+	      SCORED_ITEMS.push(record);
+    });
+  
+    SCORED_ITEMS.sort(function(a, b) {
+        if (a.aggregateScore > b.aggregateScore){
+            return -1;
+        }
+        if (a.aggregateScore < b.aggregateScore){
+            return 1;
+        }
+        return 0;
+    });
+	
+    // COMBINE DUPLICATE OBJECTS
+    const DEDUP_SCORED_ITEM_NAMES = [];
+    const DEDUP_SCORED_ITEMS = [];
+    SCORED_ITEMS.forEach(function(scoredItem){
+        if (!DEDUP_SCORED_ITEM_NAMES.includes(scoredItem["issueId"])) {
+	    DEDUP_SCORED_ITEM_NAMES.push(scoredItem["issueId"]);
+	    DEDUP_SCORED_ITEMS.push(scoredItem);
+	} else {
+	    let newItem = scoredItem;
+	    let existingItem = DEDUP_SCORED_ITEMS.find(dedupScoredItem => {
+	        return dedupScoredItem.issueId === newItem["issueId"];
+	    });
+	    if (Date.parse(newItem["lastAccess"]) > Date.parse(existingItem["lastAccess"])) {
+		existingItem["lastAccess"] = newItem["lastAccess"];
+	    }
+	    existingItem["comp"] = Number(existingItem["comp"]) + Number(newItem["comp"]);
+	}
+    });
+	
+    // DOWNLOAD
+    if (DEDUP_SCORED_ITEMS.length > 0) {
+	alert("SCORED_ITEMS: " + JSON.stringify(DEDUP_SCORED_ITEMS));
+        downloadAnkiCsv(DEDUP_SCORED_ITEMS);
+    }
+}
+	
+roll = function () {
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const originThis = "https://github.com/cjcaf1995/" + urlParams.get('this');
+    let csvCommandListDedup = [];
+    const CSV_COMMAND_LIST_COMPLETE = [];
+    
+    // Remove Duplicates
+    csvCommandListDedup = CSV_COMMAND_LIST.sort().filter(function(item, pos, ary) {
+        return !pos || item != ary[pos - 1];
+    });
+    
+    csvCommandListDedup.forEach(function(command){
+
+        let currOrigin = command.split(",")[0];
+        let currRel = command.split(",")[1];
+        let currTarget = command.split(",")[2];
+        
+        let currOrigin_v2 = currTarget;
+        let currRel_v2;
+        let currTarget_v2 = currOrigin;
+        if (currRel === 'P') {
+            currRel_v2 = 'C';   
+        } else if (currRel === 'R') {
+            currRel_v2 = 'R';    
+        } else if (currRel === 'C') {
+            currRel_v2 = 'P';   
+        }
+        
+	// CREATE MAIN ENTRIES
+        let originalEntry = [currOrigin, currRel, currTarget].join(",");
+        let mirrorEntry = [currOrigin_v2, currRel_v2, currTarget_v2].join(",");
+        if (!CSV_COMMAND_LIST_COMPLETE.includes(originalEntry)) {
+            CSV_COMMAND_LIST_COMPLETE.push(originalEntry);
+        }
+		
+	// CREATE MIRROR ENTRIES
+        if (!CSV_COMMAND_LIST_COMPLETE.includes(mirrorEntry)) {
+            CSV_COMMAND_LIST_COMPLETE.push(mirrorEntry);
+        }
+    });
+    
+    CSV_COMMAND_LIST_COMPLETE.forEach(function(command){
+        let currOrigin = command.split(",")[0];
+        let currRel = command.split(",")[1];
+        let currTarget = command.split(",")[2];
+        
+        if (currRel === 'P') {
+            if (hasRecord(currOrigin)) {
+                let existingThis = getRecord(currOrigin);
+                existingThis["parent"] = mergeArrays(existingThis["parent"], [currTarget]);
+            } else {
+                RELATIONSHIPS.push({
+                    "name": currOrigin,
+                    "parent": [currTarget],
+                    "related": [],
+                    "children": []
+                });
+            }
+        }
+        
+        if (currRel === 'C') {
+            if (hasRecord(currOrigin)) {
+                let existingThis = getRecord(currOrigin);
+                existingThis["children"] = mergeArrays(existingThis["children"], [currTarget]);
+            } else {
+                RELATIONSHIPS.push({
+                    "name": currOrigin,
+                    "parent": [],
+                    "related": [],
+                    "children": [currTarget]
+                });
+            }
+        }
+        
+        if (currRel === 'R') {
+            if (hasRecord(currOrigin)) {
+                let existingThis = getRecord(currOrigin);
+                existingThis["related"] = mergeArrays(existingThis["related"], [currTarget]);
+            } else {
+                RELATIONSHIPS.push({
+                    "name": currOrigin,
+                    "parent": [],
+                    "related": [currTarget],
+                    "children": []
+                });
+            }
+        }
+    });
+    
+    // Gather related nodes
+    let completeNodes = [];
+    let relatedNodes = [];
+    let thisExistingObj = getRecord(originThis);
+    relatedNodes = mergeArrays(relatedNodes, thisExistingObj["parent"]);
+    relatedNodes = mergeArrays(relatedNodes, thisExistingObj["related"]);
+    relatedNodes = mergeArrays(relatedNodes, thisExistingObj["children"]);
+    completeNodes = mergeArrays(completeNodes, relatedNodes);
+    relatedNodes.forEach(function(node){
+        let thisExistingNode = getRecord(node);
+        completeNodes =  mergeArrays(completeNodes, thisExistingNode["parent"]);
+        completeNodes =  mergeArrays(completeNodes, thisExistingNode["related"]);
+        completeNodes =  mergeArrays(completeNodes, thisExistingNode["children"]);
+    });
+    
+    // Remove originThis from related nodes
+    var filteredNodes = completeNodes.filter(function(e) { return e !== originThis })
+    
+    // alert(JSON.stringify(RELATIONSHIPS));
+    shuffleArray(filteredNodes);
+    window.open(filteredNodes[0]);
+};
+
+window.onload = function() {
+    const GITHUB_RAW_PREFIX = "https://raw.githubusercontent.com/";
+    const GITHUB_ACCOUNT = "cjcaf1995";
+    const GITHUB_REPO = "intersection0915";
+    const GITHUB_COMPLETE_PREFIX = GITHUB_RAW_PREFIX + GITHUB_ACCOUNT + "/" + GITHUB_REPO;
+    const isProd = true;
+    const schemaUrl = isProd ? "schema.json" : GITHUB_COMPLETE_PREFIX + "/main/schema.json";
+    fetch(schemaUrl)
+        .then(response => response.json())
+        .then(data => {
+            for (var i = 0; i < data.schema.length; i++){
+                let currRepositoryEntry = data.schema[i];
+                MASTER_SCHEMA.push(currRepositoryEntry);
+            }
+        });
+    const commandListUrl = isProd ? "commandList.json" : GITHUB_COMPLETE_PREFIX + "/main/commandList.json";
+    fetch(commandListUrl)
+        .then(response => response.json())
+        .then(data => {
+            for (var i = 0; i < data.commands.length; i++){
+                let currLine = data.commands[i];
+                CSV_COMMAND_LIST.push(currLine["command"]);
+            }
+        });
+    document.getElementById('randomButton').click();
+}
+	
+downloadAnkiCsv = function(sessionScores) {
+    
+    var issueLinks = [];
+  
+    if (sessionScores.length >= 52) {
+        let midIndex = sessionScores.length / 2;
+        midIndex = midIndex.toFixed(0);
+        for (let i = midIndex; i < (midIndex + 27) && i < sessionScores.length; i++) {
+	         issueLinks.push(sessionScores[i]["issueId"]);
+        }        
+    } else {
+        for (let i = 0; i < 27 && i < sessionScores.length; i++) {
+	         issueLinks.push(sessionScores[i]["issueId"]);
+        }
+    }
+    
+    var metadata = [];
+    for (let i = 0; i < issueLinks.length; i++) {
+        if ((i !== 0) && (i % 3 === 0)) {
+            var theLink = "https://github.com/cjcaf1995/appendix/issues/56";            
+            var theHref = "<a href=" + theLink + ">Randomizer</a>";
+            metadata.push(theHref + ",");
+        }
+        var theHref2 = "<a href=" + issueLinks[i] + ">" + issueLinks[i] + "</a>";
+        metadata.push(theHref2 + ",");
+    }
+    
+    let newLine = "\n";
+    let csvContent = "data:text/csv;charset=utf-8," + metadata.join(newLine);
+    var encodedUri = encodeURI(csvContent);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    const currDate = new Date().toISOString().split('T')[0];
+    link.setAttribute("download", "session_" + currDate + "_" + (Math.random() * 100) +  ".csv");
+    document.body.appendChild(link); // Required for FF
+    link.click(); // This will download the CSV
+};
+
+processDataJson = function (thisOrigin, score) {
+    let reviewObj = {
+	"issueId": thisOrigin, "lastAccess": new Date(), "comp": score
+    };
+    let jsonContent = "data:text/json;charset=utf-8," + JSON.stringify(reviewObj) + ",\n";
+    var encodedUri = encodeURI(jsonContent);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    const currDate = new Date().toISOString().split('T')[0];
+    link.setAttribute("download", new Date().toISOString().split('T')[0] + "_" + Math.random() + "_score.json");
+    document.body.appendChild(link); // Required for FF
+    link.click(); // This will download the JSON
+}
+	
+withScoreOne = function () {
+    withScore(1);
+}
+	
+withScoreTwo = function () {
+    withScore(2);
+}
+	
+withScoreThree = function () {
+    withScore(3);
+}
+	
+withScoreFour = function () {
+    withScore(4);
+}
+	
+withScoreEight = function () {
+    withScore(8);
+}
+	
+withScore = function (score) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const originThis = "https://github.com/cjcaf1995/" + urlParams.get('this');
+    processDataJson(originThis, score);
+}	
+
+function randomIntFromInterval(min, max) {
+    const randomNumber = Math.random();
+    return Math.floor(randomNumber * (Number(max) - Number(min) + 1)) + Number(min);
+}
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+function mergeArrays(array1, array2) {
+    // Merge and remove duplicates
+    let mergedArray = array1.concat(array2);
+    return mergedArray.filter((item, pos) => mergedArray.indexOf(item) === pos); 
+}
+
+function queryRecord(name) {
+    return RELATIONSHIPS.find(relationship => {
+      return relationship.name === name;
+    });
+}
+
+function hasRecord(name) {
+    let objRel = queryRecord(name);
+    return objRel !== undefined;
+}
+
+function getRecord(name) {
+    return queryRecord(name);
+}
+
+</script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="text-align:center">
+   <button id="randomButton" onclick="roll();" class="btn btn-success btn-lg">Roll the Dice</button><br><br>
+   <button id="withScoreOne" onclick="withScoreOne();" class="btn btn-success btn-lg">Review Score: 1</button><br><br>
+   <button id="withScoreTwo" onclick="withScoreTwo();" class="btn btn-success btn-lg">Review Score: 2</button><br><br>
+   <button id="withScoreThree" onclick="withScoreThree();" class="btn btn-success btn-lg">Review Score: 3</button><br><br>
+   <button id="withScoreFour" onclick="withScoreFour();" class="btn btn-success btn-lg">Review Score: 4</button><br><br>
+   <button id="withScoreFive" onclick="withScoreEight();" class="btn btn-success btn-lg">Review Score: 8</button><br><br>
+   <button id="calculate" onclick="calculate();" class="btn btn-success btn-lg">Calculate</button><br><br>
+   <button class="btn btn-success btn-lg"><img src="https://c.statcounter.com/12792249/0/85f97432/0/" alt="Web Analytics"  referrerPolicy="no-referrer-when-downgrade"> Visits(20220904)</button>
+</div>
+
+</body>
+</html>
