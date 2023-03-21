@@ -2222,6 +2222,477 @@
     },
     {
       "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/37"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/59,C,https://github.com/cjcaf1995/aws-book-1/issues/4"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/57,R,https://github.com/cjcaf1995/intersection/issues/58"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/57,C,https://github.com/cjcaf1995/lite/issues/25"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,C,https://github.com/cjcaf1995/lite/issues/25"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/javascript-casual/issues/5,P,https://github.com/cjcaf1995/javascript-casual/issues/1"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/javascript-casual/issues/5,C,https://github.com/cjcaf1995/codebank/issues/83"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/javascript-casual/issues/5,C,https://github.com/cjcaf1995/codebank/issues/84"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/javascript-casual/issues/5,C,https://github.com/cjcaf1995/codebank/issues/85"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/javascript-casual/issues/5,C,https://github.com/cjcaf1995/codebank/issues/86"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/30,R,https://github.com/cjcaf1995/lite/issues/41"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/30,R,https://github.com/cjcaf1995/lite/issues/42"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/30,R,https://github.com/cjcaf1995/lite/issues/43"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/30,R,https://github.com/cjcaf1995/lite/issues/44"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/30,R,https://github.com/cjcaf1995/lite/issues/45"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/30,R,https://github.com/cjcaf1995/lite/issues/46"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/30,R,https://github.com/cjcaf1995/lite/issues/47"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/41,R,https://github.com/cjcaf1995/lite/issues/41"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/41,R,https://github.com/cjcaf1995/lite/issues/42"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/41,R,https://github.com/cjcaf1995/lite/issues/43"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/41,R,https://github.com/cjcaf1995/lite/issues/44"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/41,R,https://github.com/cjcaf1995/lite/issues/45"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/41,R,https://github.com/cjcaf1995/lite/issues/46"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/41,R,https://github.com/cjcaf1995/lite/issues/47"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/42,R,https://github.com/cjcaf1995/lite/issues/41"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/42,R,https://github.com/cjcaf1995/lite/issues/42"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/42,R,https://github.com/cjcaf1995/lite/issues/43"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/42,R,https://github.com/cjcaf1995/lite/issues/44"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/42,R,https://github.com/cjcaf1995/lite/issues/45"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/42,R,https://github.com/cjcaf1995/lite/issues/46"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/42,R,https://github.com/cjcaf1995/lite/issues/47"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/43,R,https://github.com/cjcaf1995/lite/issues/41"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/43,R,https://github.com/cjcaf1995/lite/issues/42"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/43,R,https://github.com/cjcaf1995/lite/issues/43"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/43,R,https://github.com/cjcaf1995/lite/issues/44"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/43,R,https://github.com/cjcaf1995/lite/issues/45"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/43,R,https://github.com/cjcaf1995/lite/issues/46"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/43,R,https://github.com/cjcaf1995/lite/issues/47"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/44,R,https://github.com/cjcaf1995/lite/issues/41"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/44,R,https://github.com/cjcaf1995/lite/issues/42"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/44,R,https://github.com/cjcaf1995/lite/issues/43"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/44,R,https://github.com/cjcaf1995/lite/issues/44"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/44,R,https://github.com/cjcaf1995/lite/issues/45"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/44,R,https://github.com/cjcaf1995/lite/issues/46"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/44,R,https://github.com/cjcaf1995/lite/issues/47"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/45,R,https://github.com/cjcaf1995/lite/issues/41"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/45,R,https://github.com/cjcaf1995/lite/issues/42"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/45,R,https://github.com/cjcaf1995/lite/issues/43"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/45,R,https://github.com/cjcaf1995/lite/issues/44"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/45,R,https://github.com/cjcaf1995/lite/issues/45"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/45,R,https://github.com/cjcaf1995/lite/issues/46"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/45,R,https://github.com/cjcaf1995/lite/issues/47"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/46,R,https://github.com/cjcaf1995/lite/issues/41"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/46,R,https://github.com/cjcaf1995/lite/issues/42"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/46,R,https://github.com/cjcaf1995/lite/issues/43"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/46,R,https://github.com/cjcaf1995/lite/issues/44"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/46,R,https://github.com/cjcaf1995/lite/issues/45"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/46,R,https://github.com/cjcaf1995/lite/issues/46"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/46,R,https://github.com/cjcaf1995/lite/issues/47"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/47,R,https://github.com/cjcaf1995/lite/issues/41"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/47,R,https://github.com/cjcaf1995/lite/issues/42"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/47,R,https://github.com/cjcaf1995/lite/issues/43"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/47,R,https://github.com/cjcaf1995/lite/issues/44"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/47,R,https://github.com/cjcaf1995/lite/issues/45"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/47,R,https://github.com/cjcaf1995/lite/issues/46"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/47,R,https://github.com/cjcaf1995/lite/issues/47"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/41"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/42"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/43"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/44"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/45"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/46"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/47"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/38,R,https://github.com/cjcaf1995/lite/issues/48"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/38,R,https://github.com/cjcaf1995/lite/issues/49"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/38,R,https://github.com/cjcaf1995/lite/issues/50"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/38,R,https://github.com/cjcaf1995/lite/issues/51"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/48"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/49"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/50"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/51"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/48,R,https://github.com/cjcaf1995/lite/issues/48"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/48,R,https://github.com/cjcaf1995/lite/issues/49"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/48,R,https://github.com/cjcaf1995/lite/issues/50"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/48,R,https://github.com/cjcaf1995/lite/issues/51"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/49,R,https://github.com/cjcaf1995/lite/issues/48"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/49,R,https://github.com/cjcaf1995/lite/issues/49"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/49,R,https://github.com/cjcaf1995/lite/issues/50"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/49,R,https://github.com/cjcaf1995/lite/issues/51"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/50,R,https://github.com/cjcaf1995/lite/issues/48"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/50,R,https://github.com/cjcaf1995/lite/issues/49"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/50,R,https://github.com/cjcaf1995/lite/issues/50"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/50,R,https://github.com/cjcaf1995/lite/issues/51"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/51,R,https://github.com/cjcaf1995/lite/issues/48"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/51,R,https://github.com/cjcaf1995/lite/issues/49"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/51,R,https://github.com/cjcaf1995/lite/issues/50"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/51,R,https://github.com/cjcaf1995/lite/issues/51"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/35,R,https://github.com/cjcaf1995/lite/issues/52"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/35,R,https://github.com/cjcaf1995/lite/issues/53"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/35,R,https://github.com/cjcaf1995/lite/issues/54"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/35,R,https://github.com/cjcaf1995/lite/issues/55"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/52"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/53"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/54"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/55"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/52,R,https://github.com/cjcaf1995/lite/issues/52"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/52,R,https://github.com/cjcaf1995/lite/issues/53"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/52,R,https://github.com/cjcaf1995/lite/issues/54"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/52,R,https://github.com/cjcaf1995/lite/issues/55"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/53,R,https://github.com/cjcaf1995/lite/issues/52"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/53,R,https://github.com/cjcaf1995/lite/issues/53"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/53,R,https://github.com/cjcaf1995/lite/issues/54"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/53,R,https://github.com/cjcaf1995/lite/issues/55"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/54,R,https://github.com/cjcaf1995/lite/issues/52"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/54,R,https://github.com/cjcaf1995/lite/issues/53"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/54,R,https://github.com/cjcaf1995/lite/issues/54"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/54,R,https://github.com/cjcaf1995/lite/issues/55"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/55,R,https://github.com/cjcaf1995/lite/issues/52"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/55,R,https://github.com/cjcaf1995/lite/issues/53"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/55,R,https://github.com/cjcaf1995/lite/issues/54"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/55,R,https://github.com/cjcaf1995/lite/issues/55"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/56,R,https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/72"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/15,C,https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/88"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,C,https://github.com/cjcaf1995/lite/issues/59"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,C,https://github.com/cjcaf1995/lite/issues/60"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,C,https://github.com/cjcaf1995/lite/issues/61"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,C,https://github.com/cjcaf1995/lite/issues/62"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,C,https://github.com/cjcaf1995/lite/issues/63"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,C,https://github.com/cjcaf1995/lite/issues/64"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,C,https://github.com/cjcaf1995/lite/issues/65"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,C,https://github.com/cjcaf1995/lite/issues/66"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,C,https://github.com/cjcaf1995/lite/issues/67"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/39,R,https://github.com/cjcaf1995/lite/issues/68"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/39,R,https://github.com/cjcaf1995/lite/issues/69"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/39,R,https://github.com/cjcaf1995/lite/issues/70"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/39,R,https://github.com/cjcaf1995/lite/issues/71"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/39,R,https://github.com/cjcaf1995/lite/issues/72"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/68"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/69"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/70"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/71"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/72"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/69,R,https://github.com/cjcaf1995/lite/issues/69"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/69,R,https://github.com/cjcaf1995/lite/issues/70"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/69,R,https://github.com/cjcaf1995/lite/issues/71"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/69,R,https://github.com/cjcaf1995/lite/issues/72"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/70,R,https://github.com/cjcaf1995/lite/issues/69"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/70,R,https://github.com/cjcaf1995/lite/issues/70"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/70,R,https://github.com/cjcaf1995/lite/issues/71"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/70,R,https://github.com/cjcaf1995/lite/issues/72"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/71,R,https://github.com/cjcaf1995/lite/issues/69"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/71,R,https://github.com/cjcaf1995/lite/issues/70"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/71,R,https://github.com/cjcaf1995/lite/issues/71"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/71,R,https://github.com/cjcaf1995/lite/issues/72"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/72,R,https://github.com/cjcaf1995/lite/issues/69"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/72,R,https://github.com/cjcaf1995/lite/issues/70"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/72,R,https://github.com/cjcaf1995/lite/issues/71"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/72,R,https://github.com/cjcaf1995/lite/issues/72"
     }
   ]
 }
