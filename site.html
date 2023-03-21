@@ -35,7 +35,7 @@ calculate = function () {
     SESSION_SCORES.forEach(function(record){
         let timeBasedScore = 0.5 * ((new Date() - Date.parse(record["lastAccess"])) / (1000 * 3600 * 24));
         let comprehensionScore = -1 * (0.5 * Number(record["comp"]));
-        let aggregateScore = timeBasedScore + comprehensionScore;
+        let aggregateScore = timeBasedScore * comprehensionScore;
         record["aggregateScore"] = aggregateScore;
 	SCORED_ITEMS.push(record);
     });
