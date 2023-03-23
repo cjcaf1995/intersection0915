@@ -40,10 +40,10 @@ calculate = function () {
 	SCORED_ITEMS.push(record);
     });
     SCORED_ITEMS.sort(function(a, b) {
-        if (a.aggregateScore > b.aggregateScore){
+        if (a.lastAccess > b.lastAccess){
             return -1;
         }
-        if (a.aggregateScore < b.aggregateScore){
+        if (a.lastAccess < b.lastAccess){
             return 1;
         }
         return 0;
