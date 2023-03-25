@@ -2648,6 +2648,192 @@
     },
     {
       "command": "https://github.com/cjcaf1995/codebank/issues/106,R,https://github.com/cjcaf1995/codebank/issues/105"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/33,P,https://github.com/cjcaf1995/intersection/issues/22"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/61,R,https://github.com/cjcaf1995/effective-typescript/issues/7"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/74,P,https://github.com/cjcaf1995/effective-typescript/issues/7"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/75,P,https://github.com/cjcaf1995/effective-typescript/issues/7"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/61,R,https://github.com/cjcaf1995/lite/issues/74"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/61,R,https://github.com/cjcaf1995/lite/issues/75"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/74,R,https://github.com/cjcaf1995/lite/issues/75"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/45,C,https://github.com/cjcaf1995/lite/issues/76"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/45,C,https://github.com/cjcaf1995/lite/issues/77"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/76"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/77"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/3,C,https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/112"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/effective-typescript/issues/2,C,https://github.com/cjcaf1995/lite/issues/78"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/effective-typescript/issues/2,C,https://github.com/cjcaf1995/lite/issues/79"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/effective-typescript/issues/2,C,https://github.com/cjcaf1995/lite/issues/80"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/81,P,https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/lite/issues/82,P,https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/92"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/81"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/82"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/83"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/84"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/85"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/86"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/87"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/88"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/89"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/90"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/91"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/100,C,https://github.com/cjcaf1995/lite/issues/92"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/58,R,https://github.com/cjcaf1995/lite/issues/93"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/52,C,https://github.com/cjcaf1995/lite/issues/93"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/26,C,https://github.com/cjcaf1995/lite/issues/93"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/26,C,https://github.com/cjcaf1995/lite/issues/94"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/26,C,https://github.com/cjcaf1995/lite/issues/95"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/26,C,https://github.com/cjcaf1995/lite/issues/96"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/26,C,https://github.com/cjcaf1995/lite/issues/97"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/26,C,https://github.com/cjcaf1995/lite/issues/98"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/32,C,https://github.com/cjcaf1995/lite/issues/99"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/32,C,https://github.com/cjcaf1995/lite/issues/100"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/32,C,https://github.com/cjcaf1995/lite/issues/101"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/32,C,https://github.com/cjcaf1995/lite/issues/102"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/32,C,https://github.com/cjcaf1995/lite/issues/103"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/32,C,https://github.com/cjcaf1995/lite/issues/104"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/32,C,https://github.com/cjcaf1995/lite/issues/105"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/86,C,https://github.com/cjcaf1995/lite/issues/106"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/86,C,https://github.com/cjcaf1995/lite/issues/107"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/86,C,https://github.com/cjcaf1995/lite/issues/108"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/56,C,https://github.com/cjcaf1995/lite/issues/109"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/56,C,https://github.com/cjcaf1995/lite/issues/110"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/docker-casual/issues/56,C,https://github.com/cjcaf1995/lite/issues/111"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/114,C,https://github.com/cjcaf1995/lite/issues/112"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/114,C,https://github.com/cjcaf1995/lite/issues/113"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/114,C,https://github.com/cjcaf1995/lite/issues/114"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/114,C,https://github.com/cjcaf1995/lite/issues/115"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/114,C,https://github.com/cjcaf1995/lite/issues/116"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/114,C,https://github.com/cjcaf1995/lite/issues/117"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/effective-typescript/issues/9,C,https://github.com/cjcaf1995/lite/issues/118"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/effective-typescript/issues/9,C,https://github.com/cjcaf1995/lite/issues/119"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/effective-typescript/issues/9,C,https://github.com/cjcaf1995/lite/issues/120"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/intersection/issues/56,C,https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/82"
+    },
+    {
+      "command": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/118,P,https://github.com/cjcaf1995/intersection/issues/30"
     }
   ]
 }
