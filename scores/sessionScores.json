@@ -3964,6 +3964,376 @@
       "issueId": "https://github.com/cjcaf1995/intersection/issues/3",
       "lastAccess": "2023-03-25T10:54:10.615Z",
       "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/112",
+      "lastAccess": "2023-03-26T04:44:40.560Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/linux-casual/issues/1",
+      "lastAccess": "2023-03-26T04:57:37.668Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/104",
+      "lastAccess": "2023-03-26T05:06:01.440Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/24",
+      "lastAccess": "2023-03-26T04:58:37.482Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/82",
+      "lastAccess": "2023-03-26T04:40:34.847Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/30",
+      "lastAccess": "2023-03-26T04:25:56.757Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/26",
+      "lastAccess": "2023-03-26T04:30:26.138Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/21",
+      "lastAccess": "2023-03-26T04:53:39.289Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/49",
+      "lastAccess": "2023-03-26T05:00:17.214Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/65",
+      "lastAccess": "2023-03-26T04:48:01.224Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/60",
+      "lastAccess": "2023-03-26T04:02:19.439Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/17",
+      "lastAccess": "2023-03-26T04:58:25.162Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/65",
+      "lastAccess": "2023-03-26T05:05:42.818Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/aws-book-1/issues/16",
+      "lastAccess": "2023-03-26T04:00:57.236Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/7",
+      "lastAccess": "2023-03-26T05:01:45.638Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/102",
+      "lastAccess": "2023-03-26T05:05:25.528Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/91",
+      "lastAccess": "2023-03-26T04:54:48.362Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/32",
+      "lastAccess": "2023-03-26T04:47:02.239Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/codebank/issues/65",
+      "lastAccess": "2023-03-26T04:08:49.661Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/60",
+      "lastAccess": "2023-03-26T04:16:06.886Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/javascript-casual/issues/5",
+      "lastAccess": "2023-03-26T04:21:35.108Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/51",
+      "lastAccess": "2023-03-26T04:58:49.352Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/effective-typescript/issues/7",
+      "lastAccess": "2023-03-26T04:43:49.428Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/84",
+      "lastAccess": "2023-03-26T04:53:19.480Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/61",
+      "lastAccess": "2023-03-26T04:53:57.454Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/43",
+      "lastAccess": "2023-03-26T04:59:50.093Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/codebank/issues/119",
+      "lastAccess": "2023-03-26T04:29:46.257Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/21",
+      "lastAccess": "2023-03-26T05:00:57.978Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/java-casual/issues/10",
+      "lastAccess": "2023-03-26T05:02:28.038Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/112",
+      "lastAccess": "2023-03-26T04:33:19.594Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/45",
+      "lastAccess": "2023-03-26T04:44:18.790Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/64",
+      "lastAccess": "2023-03-26T04:54:31.451Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/codebank/issues/47",
+      "lastAccess": "2023-03-26T04:25:16.059Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/aws-book-1/issues/16",
+      "lastAccess": "2023-03-26T05:02:02.360Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/codebank/issues/112",
+      "lastAccess": "2023-03-26T04:56:01.828Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/52",
+      "lastAccess": "2023-03-26T04:25:47.208Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/effective-typescript/issues/2",
+      "lastAccess": "2023-03-26T04:45:21.936Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/82",
+      "lastAccess": "2023-03-26T04:39:32.076Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/49",
+      "lastAccess": "2023-03-26T04:33:52.774Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/104",
+      "lastAccess": "2023-03-26T05:03:17.398Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/75",
+      "lastAccess": "2023-03-26T05:02:14.428Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/65",
+      "lastAccess": "2023-03-26T04:57:22.992Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/107",
+      "lastAccess": "2023-03-26T04:49:47.584Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/61",
+      "lastAccess": "2023-03-26T04:16:49.300Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/75",
+      "lastAccess": "2023-03-26T04:18:58.534Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/32",
+      "lastAccess": "2023-03-26T04:28:48.160Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/54",
+      "lastAccess": "2023-03-26T05:01:57.894Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/linux-casual/issues/1",
+      "lastAccess": "2023-03-26T05:00:22.886Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/65",
+      "lastAccess": "2023-03-26T04:58:02.958Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/16",
+      "lastAccess": "2023-03-26T04:59:37.008Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/1",
+      "lastAccess": "2023-03-26T04:30:33.392Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/codebank/issues/47",
+      "lastAccess": "2023-03-26T05:04:01.881Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/33",
+      "lastAccess": "2023-03-26T04:59:24.048Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/effective-typescript/issues/7",
+      "lastAccess": "2023-03-26T04:28:35.462Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/15",
+      "lastAccess": "2023-03-26T04:45:00.512Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/codebank/issues/124",
+      "lastAccess": "2023-03-26T04:54:20.698Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/72",
+      "lastAccess": "2023-03-26T04:50:06.378Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/90",
+      "lastAccess": "2023-03-26T05:00:06.666Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/45",
+      "lastAccess": "2023-03-26T04:30:11.714Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/107",
+      "lastAccess": "2023-03-26T04:52:43.164Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/javascript-casual/issues/5",
+      "lastAccess": "2023-03-26T04:36:07.866Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/codebank/issues/47",
+      "lastAccess": "2023-03-26T04:57:44.032Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/102",
+      "lastAccess": "2023-03-26T04:56:58.969Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/32",
+      "lastAccess": "2023-03-26T04:51:01.667Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/56",
+      "lastAccess": "2023-03-26T05:04:30.515Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/24",
+      "lastAccess": "2023-03-26T04:47:47.199Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/intersection/issues/56",
+      "lastAccess": "2023-03-26T04:39:23.554Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/83",
+      "lastAccess": "2023-03-26T04:41:00.216Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/90",
+      "lastAccess": "2023-03-26T05:01:18.568Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/docker-casual/issues/26",
+      "lastAccess": "2023-03-26T04:11:02.524Z",
+      "comp": 4
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-angular-js-in-action/issues/53",
+      "lastAccess": "2023-03-26T05:01:31.746Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-spring-boot-in-action/issues/92",
+      "lastAccess": "2023-03-26T05:00:35.292Z",
+      "comp": 8
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/lite/issues/56",
+      "lastAccess": "2023-03-26T04:12:03.353Z",
+      "comp": 3
+    },
+    {
+      "issueId": "https://github.com/cjcaf1995/mrz-linux-commands/issues/13",
+      "lastAccess": "2023-03-26T05:01:07.610Z",
+      "comp": 8
     }
   ]
 }
